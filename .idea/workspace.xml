@@ -1,7 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="24e7a4d3-e1cf-47e8-a7dc-71ab5a2a9ead" name="Default Changelist" comment="" />
+    <list default="true" id="24e7a4d3-e1cf-47e8-a7dc-71ab5a2a9ead" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/tools.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/smartfox_info.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/company/source/sun/awt/UNIXToolkit.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/company/source/sun/font/FontConfigManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/company/test/string/TestString.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaSource.iml" beforeDir="false" afterPath="$PROJECT_DIR$/JavaSource.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JavaSource/java/lang/String$CaseInsensitiveComparator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaSource/java/lang/String$CaseInsensitiveComparator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JavaSource/java/lang/String.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaSource/java/lang/String.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JavaSource/javax/security/auth/kerberos/JavaxSecurityAuthKerberosAccessImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaSource/javax/security/auth/kerberos/JavaxSecurityAuthKerberosAccessImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/source/java/lang/String.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/source/java/lang/String.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/source/javax/security/auth/kerberos/JavaxSecurityAuthKerberosAccessImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/source/javax/security/auth/kerberos/JavaxSecurityAuthKerberosAccessImpl.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -17,6 +31,14 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="$PROJECT_DIR$/../../javaFile/maven/apache-maven-3.6.3-bin/apache-maven-3.6.3" />
+        <option name="userSettingsFile" value="E:\javaFile\maven\apache-maven-3.6.3-bin\apache-maven-3.6.3\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
   <component name="ProjectId" id="1qA3djValJvrFlSgyBd6k9ChyBN" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -24,37 +46,112 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="C:/javaTool/JDK8/lib/tools.jar" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15332031" />
     <property name="project.structure.side.proportion" value="0.13394919" />
-    <property name="settings.editor.selected.configurable" value="debugger.stepping" />
+    <property name="settings.editor.selected.configurable" value="JavaScript.Libraries" />
   </component>
-  <component name="RunManager" selected="Application.TestHashMap">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true">
-      <option name="MAIN_CLASS_NAME" value="com.company.Main" />
-      <module name="JavaSource" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
+  <component name="RunManager" selected="JUnit.TestString.regionMatches">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestHashMap" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.company.test.hashmap.TestHashMap" />
+    <configuration name="TestString.compareTo" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="JavaSource" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.company.test.hashmap.*" />
+          <option name="PATTERN" value="com.company.test.string.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="com.company.test.string" />
+      <option name="MAIN_CLASS_NAME" value="com.company.test.string.TestString" />
+      <option name="METHOD_NAME" value="compareTo" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestString.contentEquals" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="JavaSource" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.company.test.string.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.company.test.string" />
+      <option name="MAIN_CLASS_NAME" value="com.company.test.string.TestString" />
+      <option name="METHOD_NAME" value="contentEquals" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestString.equals" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="JavaSource" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.company.test.string.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.company.test.string" />
+      <option name="MAIN_CLASS_NAME" value="com.company.test.string.TestString" />
+      <option name="METHOD_NAME" value="equals" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestString.isEmpty" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="JavaSource" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.company.test.string.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.company.test.string" />
+      <option name="MAIN_CLASS_NAME" value="com.company.test.string.TestString" />
+      <option name="METHOD_NAME" value="isEmpty" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestString.regionMatches" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="JavaSource" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.company.test.string.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.company.test.string" />
+      <option name="MAIN_CLASS_NAME" value="com.company.test.string.TestString" />
+      <option name="METHOD_NAME" value="regionMatches" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -124,8 +221,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.TestHashMap" />
-        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.TestString.regionMatches" />
+        <item itemvalue="JUnit.TestString.compareTo" />
+        <item itemvalue="JUnit.TestString.isEmpty" />
+        <item itemvalue="JUnit.TestString.contentEquals" />
+        <item itemvalue="JUnit.TestString.equals" />
       </list>
     </recent_temporary>
   </component>
@@ -142,7 +242,8 @@
       <updated>1616508656546</updated>
       <workItem from="1616509815338" duration="432000" />
       <workItem from="1616510255898" duration="217000" />
-      <workItem from="1616553237737" duration="293000" />
+      <workItem from="1616553237737" duration="5565000" />
+      <workItem from="1616571869142" duration="4202000" />
     </task>
     <servers />
   </component>
@@ -159,52 +260,7 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="WindowStateProjectService">
-    <state width="1398" height="304" key="GridCell.Tab.0.bottom" timestamp="1616510473045">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state width="1398" height="304" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1616510473045" />
-    <state width="1398" height="304" key="GridCell.Tab.0.bottom/0.23.1440.877@0.23.1440.877" timestamp="1616510233075" />
-    <state width="1398" height="304" key="GridCell.Tab.0.center" timestamp="1616510473044">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state width="1398" height="304" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1616510473044" />
-    <state width="1398" height="304" key="GridCell.Tab.0.center/0.23.1440.877@0.23.1440.877" timestamp="1616510233073" />
-    <state width="1398" height="304" key="GridCell.Tab.0.left" timestamp="1616510473044">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state width="1398" height="304" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1616510473044" />
-    <state width="1398" height="304" key="GridCell.Tab.0.left/0.23.1440.877@0.23.1440.877" timestamp="1616510233072" />
-    <state width="1398" height="304" key="GridCell.Tab.0.right" timestamp="1616510473045">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state width="1398" height="304" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1616510473045" />
-    <state width="1398" height="304" key="GridCell.Tab.0.right/0.23.1440.877@0.23.1440.877" timestamp="1616510233074" />
-    <state width="1398" height="304" key="GridCell.Tab.1.bottom" timestamp="1616510473047">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state width="1398" height="304" key="GridCell.Tab.1.bottom/0.0.1440.900@0.0.1440.900" timestamp="1616510473047" />
-    <state width="1398" height="304" key="GridCell.Tab.1.bottom/0.23.1440.877@0.23.1440.877" timestamp="1616510233210" />
-    <state width="1398" height="304" key="GridCell.Tab.1.center" timestamp="1616510473046">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state width="1398" height="304" key="GridCell.Tab.1.center/0.0.1440.900@0.0.1440.900" timestamp="1616510473046" />
-    <state width="1398" height="304" key="GridCell.Tab.1.center/0.23.1440.877@0.23.1440.877" timestamp="1616510233209" />
-    <state width="1398" height="304" key="GridCell.Tab.1.left" timestamp="1616510473046">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state width="1398" height="304" key="GridCell.Tab.1.left/0.0.1440.900@0.0.1440.900" timestamp="1616510473046" />
-    <state width="1398" height="304" key="GridCell.Tab.1.left/0.23.1440.877@0.23.1440.877" timestamp="1616510233208" />
-    <state width="1398" height="304" key="GridCell.Tab.1.right" timestamp="1616510473047">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state width="1398" height="304" key="GridCell.Tab.1.right/0.0.1440.900@0.0.1440.900" timestamp="1616510473047" />
-    <state width="1398" height="304" key="GridCell.Tab.1.right/0.23.1440.877@0.23.1440.877" timestamp="1616510233210" />
-    <state x="221" y="63" key="SettingsEditor" timestamp="1616510469124">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state x="221" y="63" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1616510469124" />
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -214,7 +270,31 @@
           <line>7</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/company/test/string/TestString.java</url>
+          <line>18</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/company/test/string/TestString.java</url>
+          <line>54</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/company/test/string/TestString.java</url>
+          <line>39</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/company/test/string/TestString.java</url>
+          <line>103</line>
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

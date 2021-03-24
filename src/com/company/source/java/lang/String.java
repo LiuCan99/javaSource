@@ -974,16 +974,21 @@ public final class String
      * @see  #equalsIgnoreCase(String)
      */
     public boolean equals(Object anObject) {
+        //==比较的是地址值，两个字符串指向同一个地址值则肯定相等
         if (this == anObject) {
             return true;
         }
+        //判断类型是否是String  instanceof是Java中的二元运算符，左边是对象，右边是类；当对象是右边类或子类所创建对象时，返回true；否则，返回false。
+        boolean b = anObject instanceof String;
         if (anObject instanceof String) {
             String anotherString = (String)anObject;
             int n = value.length;
+            //判断两个对象长度是否一致
             if (n == anotherString.value.length) {
                 char v1[] = value;
                 char v2[] = anotherString.value;
                 int i = 0;
+                //循环判断每个元素
                 while (n-- != 0) {
                     if (v1[i] != v2[i])
                         return false;
@@ -1153,19 +1158,24 @@ public final class String
     public int compareTo(String anotherString) {
         int len1 = value.length;
         int len2 = anotherString.value.length;
+        //最小长度值
         int lim = Math.min(len1, len2);
         char v1[] = value;
         char v2[] = anotherString.value;
 
         int k = 0;
+        //循环次数小于最小长度
         while (k < lim) {
             char c1 = v1[k];
             char c2 = v2[k];
+
+            //字符不同，则返回两字符的ASCII 码的差值
             if (c1 != c2) {
                 return c1 - c2;
             }
             k++;
         }
+        //相同则返回两字符长度差值
         return len1 - len2;
     }
 
