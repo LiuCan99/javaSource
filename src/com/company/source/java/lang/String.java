@@ -1410,20 +1410,29 @@ public final class String
      *          </pre>
      */
     public boolean startsWith(String prefix, int toffset) {
+        //当前字符串的char数组
         char ta[] = value;
+        //字符串开始查找的索引
         int to = toffset;
+        //前缀的char数组
         char pa[] = prefix.value;
         int po = 0;
+        //前缀数组长度
         int pc = prefix.value.length;
         // Note: toffset might be near -1>>>1.
+        //如果开始查找的索引值 小于0或者大于当前字符串的长度 则为false
+       int num= value.length - pc;
         if ((toffset < 0) || (toffset > value.length - pc)) {
             return false;
         }
+        //以前缀数组长度来循环
         while (--pc >= 0) {
+            //当前字符串的“开始查找位置”的值，和前缀char数组一个个比较，只要有一个不相等就是false
             if (ta[to++] != pa[po++]) {
                 return false;
             }
         }
+        //符合条件
         return true;
     }
 
@@ -1936,6 +1945,7 @@ public final class String
         if (beginIndex < 0) {
             throw new StringIndexOutOfBoundsException(beginIndex);
         }
+        //截取长度=总长度-开始索引
         int subLen = value.length - beginIndex;
         if (subLen < 0) {
             throw new StringIndexOutOfBoundsException(subLen);
@@ -1966,13 +1976,17 @@ public final class String
      *             {@code endIndex}.
      */
     public String substring(int beginIndex, int endIndex) {
+       //开始索引不能小于零
         if (beginIndex < 0) {
             throw new StringIndexOutOfBoundsException(beginIndex);
         }
+        //结束索引不能大于字符串长度
         if (endIndex > value.length) {
             throw new StringIndexOutOfBoundsException(endIndex);
         }
+        //截取长度是 结束索引-开始索引
         int subLen = endIndex - beginIndex;
+        //截取的长度不能小于零
         if (subLen < 0) {
             throw new StringIndexOutOfBoundsException(subLen);
         }
@@ -2034,13 +2048,19 @@ public final class String
      *          characters followed by the string argument's characters.
      */
     public String concat(String str) {
+        //拼接字符串长度
         int otherLen = str.length();
+        //如果需要拼接的字符串长度为0，则返回原字符串
         if (otherLen == 0) {
             return this;
         }
+        //原字符串长度
         int len = value.length;
+        //将原字符串复制到buf数组
         char buf[] = Arrays.copyOf(value, len + otherLen);
+        //将str字符串全部复制到buf索引len（原字符串之后）完成拼接
         str.getChars(buf, len);
+        //返回新的字符数组
         return new String(buf, true);
     }
 

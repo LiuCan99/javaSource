@@ -113,4 +113,72 @@ public class TestString {
         }
         System.out.println(number);
     }
+
+    /**
+     * startsWith("ab",0) 前缀，开始位置
+     */
+    @Test
+    public void startsWith(){
+        String str="abcdef";
+        boolean a = str.startsWith("ab",0);
+        boolean b = str.startsWith("b");
+    }
+
+    /**
+     * indexOf 查找指定字符的位置
+     *
+     */
+    @Test
+    public void indexOf(){
+        String string = "aaa456ac";
+        //查找指定字符是在字符串中的下标。在则返回所在字符串下标；不在则返回-1.
+        int b = string.indexOf("b");// indexOf(String str); 返回结果：-1，"b"不存在
+
+        // 从第四个字符位置开始往后继续查找，包含当前位置
+        int a = string.indexOf("a", 3);//indexOf(String str, int fromIndex); 返回结果：6
+
+        //（与之前的差别：上面的参数是 String 类型，下面的参数是 int 类型）参考数据：a-97,b-98,c-99
+
+        // 从头开始查找是否存在指定的字符
+        int i = string.indexOf(99);//indexOf(int ch)；返回结果：7
+        int c = string.indexOf('c');//indexOf(int ch)；返回结果：7
+
+        //从fromIndex查找ch，这个是字符型变量，不是字符串。字符a对应的数字就是97。
+        int i1 = string.indexOf(97, 3);//indexOf(int ch, int fromIndex); 返回结果：6
+        int a1 = string.indexOf('a', 3);//indexOf(int ch, int fromIndex); 返回结果：6
+
+    }
+
+
+    /**
+     * 截取字符串
+     */
+    @Test
+    public void substring(){
+        String str="abcdefghij";
+        //bc
+        String substring = str.substring(1, 3);
+
+    }
+
+    /**
+     *
+     * 拼接字符串，将指定字符串连接到此字符串的结尾。
+     */
+    @Test
+    public void concat(){
+        String str="abcdefghij";
+        String concat = str.concat("123");
+    }
+
+    /**
+     *
+     */
+    @Test
+    public void replace(){
+        String str="aaaabbbbcccc";
+        String aaa = str.replace("aaa", "111");
+        String bbb = str.replace('b', '1');
+
+    }
 }

@@ -2,19 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="24e7a4d3-e1cf-47e8-a7dc-71ab5a2a9ead" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/tools.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/smartfox_info.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/company/source/sun/awt/UNIXToolkit.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/company/source/sun/font/FontConfigManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/company/test/string/TestString.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSource.iml" beforeDir="false" afterPath="$PROJECT_DIR$/JavaSource.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaSource/java/lang/String$CaseInsensitiveComparator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaSource/java/lang/String$CaseInsensitiveComparator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JavaSource/com/company/test/string/TestString.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaSource/com/company/test/string/TestString.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/JavaSource/java/lang/String.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaSource/java/lang/String.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaSource/javax/security/auth/kerberos/JavaxSecurityAuthKerberosAccessImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaSource/javax/security/auth/kerberos/JavaxSecurityAuthKerberosAccessImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/source/java/lang/String.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/source/java/lang/String.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/source/javax/security/auth/kerberos/JavaxSecurityAuthKerberosAccessImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/source/javax/security/auth/kerberos/JavaxSecurityAuthKerberosAccessImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/test/string/TestString.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/test/string/TestString.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,21 +54,8 @@
     <property name="project.structure.side.proportion" value="0.13394919" />
     <property name="settings.editor.selected.configurable" value="JavaScript.Libraries" />
   </component>
-  <component name="RunManager" selected="JUnit.TestString.regionMatches">
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TestString.compareTo" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.TestString.replace">
+    <configuration name="TestString.concat" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="JavaSource" />
       <extension name="coverage">
         <pattern>
@@ -86,13 +65,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.company.test.string" />
       <option name="MAIN_CLASS_NAME" value="com.company.test.string.TestString" />
-      <option name="METHOD_NAME" value="compareTo" />
+      <option name="METHOD_NAME" value="concat" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestString.contentEquals" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestString.indexOf" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="JavaSource" />
       <extension name="coverage">
         <pattern>
@@ -102,13 +81,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.company.test.string" />
       <option name="MAIN_CLASS_NAME" value="com.company.test.string.TestString" />
-      <option name="METHOD_NAME" value="contentEquals" />
+      <option name="METHOD_NAME" value="indexOf" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestString.equals" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestString.replace" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="JavaSource" />
       <extension name="coverage">
         <pattern>
@@ -118,13 +97,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.company.test.string" />
       <option name="MAIN_CLASS_NAME" value="com.company.test.string.TestString" />
-      <option name="METHOD_NAME" value="equals" />
+      <option name="METHOD_NAME" value="replace" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestString.isEmpty" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestString.startsWith" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="JavaSource" />
       <extension name="coverage">
         <pattern>
@@ -134,13 +113,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.company.test.string" />
       <option name="MAIN_CLASS_NAME" value="com.company.test.string.TestString" />
-      <option name="METHOD_NAME" value="isEmpty" />
+      <option name="METHOD_NAME" value="startsWith" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestString.regionMatches" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestString.substring" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="JavaSource" />
       <extension name="coverage">
         <pattern>
@@ -150,7 +129,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.company.test.string" />
       <option name="MAIN_CLASS_NAME" value="com.company.test.string.TestString" />
-      <option name="METHOD_NAME" value="regionMatches" />
+      <option name="METHOD_NAME" value="substring" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -221,11 +200,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.TestString.regionMatches" />
-        <item itemvalue="JUnit.TestString.compareTo" />
-        <item itemvalue="JUnit.TestString.isEmpty" />
-        <item itemvalue="JUnit.TestString.contentEquals" />
-        <item itemvalue="JUnit.TestString.equals" />
+        <item itemvalue="JUnit.TestString.replace" />
+        <item itemvalue="JUnit.TestString.concat" />
+        <item itemvalue="JUnit.TestString.substring" />
+        <item itemvalue="JUnit.TestString.indexOf" />
+        <item itemvalue="JUnit.TestString.startsWith" />
       </list>
     </recent_temporary>
   </component>
@@ -243,7 +222,8 @@
       <workItem from="1616509815338" duration="432000" />
       <workItem from="1616510255898" duration="217000" />
       <workItem from="1616553237737" duration="5565000" />
-      <workItem from="1616571869142" duration="4202000" />
+      <workItem from="1616571869142" duration="9894000" />
+      <workItem from="1616655736600" duration="8847000" />
     </task>
     <servers />
   </component>
@@ -289,6 +269,41 @@
           <url>file://$PROJECT_DIR$/src/com/company/test/string/TestString.java</url>
           <line>103</line>
           <option name="timeStamp" value="22" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/company/test/string/TestString.java</url>
+          <line>122</line>
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/company/source/java/lang/String.java</url>
+          <line>1423</line>
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/company/test/string/TestString.java</url>
+          <line>159</line>
+          <option name="timeStamp" value="29" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/company/source/java/lang/String.java</url>
+          <line>2053</line>
+          <option name="timeStamp" value="31" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/company/test/string/TestString.java</url>
+          <line>170</line>
+          <option name="timeStamp" value="32" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/company/source/java/lang/String.java</url>
+          <line>2061</line>
+          <option name="timeStamp" value="34" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/company/test/string/TestString.java</url>
+          <line>179</line>
+          <option name="timeStamp" value="35" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
