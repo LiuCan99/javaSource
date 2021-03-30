@@ -172,13 +172,30 @@ public class TestString {
     }
 
     /**
-     *
+     *replace和replaceAll都是替换所有
+     * 但是replaceAll会在替换之前判断被替换的参数是不是一个正则表达式
      */
     @Test
     public void replace(){
-        String str="aaaabbbbcccc";
-        String aaa = str.replace("aaa", "111");
-        String bbb = str.replace('b', '1');
+        String str1 = "Aoc.Iop.Aoc.Iop.Aoc";		//定义三个一样的字符串
+        String str2 = "Aoc.Iop.Aoc.Iop.Aoc";
+        String str3 = "Aoc.Iop.Aoc.Iop.Aoc";
+
+        String str11 = str1.replace(".", "#");		// str11 = "Aoc#Iop#Aoc#Iop#Aoc"
+        /**
+         * “\”也是正则表达式中的转义字符（replaceAll()的参数就是正则表达式），也需要用两个代表一个。
+         * 所以：“\\\\”会被j ava 转换成 “\\”，“\\” 又会被正则表达式转换成“\”
+         *
+         *  由于“.”属于正则表达式的符号，所以 replaceAll() 方法执行的是正则替换。
+         */
+        String str22 = str2.replaceAll(".", "#");	// str22 = "###################"
+        String str33 = str3.replaceFirst(".", "#");	// str33 = "#oc.Iop.Aoc.Iop.Aoc"
+
+        /**
+         * replace 的参数是 char 和 CharSequence，即可以支持字符的替换，也支持字符串的替换(CharSequence 即字符串序列的意思，说白了也就是字符串)；
+         * replaceAll 的参数是 regex，即基于正则表达式的替换。比如，可以通过 replaceAll ("\d", “*”) 把一个字符串所有的数字字符都换成星号；
+         * String 类执行了替换操作后，返回一个新的对象，源字符串的内容是没有发生改变的。
+         */
 
     }
 }

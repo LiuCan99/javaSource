@@ -2250,6 +2250,9 @@ public final class String
      * @spec JSR-51
      */
     public String replaceAll(String regex, String replacement) {
+        //Pattern.compile(String regex) 编译（解析）正则表达式，获得Pattern对象
+        //Pattern.matcher(CharSequence input) 获取匹配器
+        //Matcher.replaceAll(String replacement) – 替换字符串
         return Pattern.compile(regex).matcher(this).replaceAll(replacement);
     }
 

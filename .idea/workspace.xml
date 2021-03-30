@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="24e7a4d3-e1cf-47e8-a7dc-71ab5a2a9ead" name="Default Changelist" comment="">
+    <list default="true" id="24e7a4d3-e1cf-47e8-a7dc-71ab5a2a9ead" name="Default Changelist" comment="String字符串源码学习">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaSource/com/company/test/string/TestString.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaSource/com/company/test/string/TestString.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaSource/java/lang/String.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaSource/java/lang/String.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/source/java/lang/String.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/source/java/lang/String.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/test/string/TestString.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/test/string/TestString.java" afterDir="false" />
     </list>
@@ -47,7 +45,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="C:/javaTool/JDK8/lib/tools.jar" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15332031" />
@@ -55,6 +53,17 @@
     <property name="settings.editor.selected.configurable" value="JavaScript.Libraries" />
   </component>
   <component name="RunManager" selected="JUnit.TestString.replace">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="TestString.concat" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="JavaSource" />
       <extension name="coverage">
@@ -224,7 +233,17 @@
       <workItem from="1616553237737" duration="5565000" />
       <workItem from="1616571869142" duration="9894000" />
       <workItem from="1616655736600" duration="8847000" />
+      <workItem from="1616752360411" duration="44000" />
+      <workItem from="1617095788231" duration="3306000" />
     </task>
+    <task id="LOCAL-00001" summary="String字符串源码学习">
+      <created>1616752389889</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1616752389889</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -241,6 +260,10 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="String字符串源码学习" />
+    <option name="LAST_COMMIT_MESSAGE" value="String字符串源码学习" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -299,11 +322,6 @@
           <url>file://$PROJECT_DIR$/src/com/company/source/java/lang/String.java</url>
           <line>2061</line>
           <option name="timeStamp" value="34" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/company/test/string/TestString.java</url>
-          <line>179</line>
-          <option name="timeStamp" value="35" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
