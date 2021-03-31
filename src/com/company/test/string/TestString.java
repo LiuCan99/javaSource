@@ -2,6 +2,10 @@ package com.company.test.string;
 
 import org.junit.Test;
 
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+
 public class TestString {
 
     /**
@@ -125,7 +129,7 @@ public class TestString {
     }
 
     /**
-     * indexOf 查找指定字符的位置
+     * indexOf：查找指定字符的位置
      *
      */
     @Test
@@ -151,7 +155,7 @@ public class TestString {
 
 
     /**
-     * 截取字符串
+     * substring：截取字符串
      */
     @Test
     public void substring(){
@@ -163,7 +167,7 @@ public class TestString {
 
     /**
      *
-     * 拼接字符串，将指定字符串连接到此字符串的结尾。
+     * concat：拼接字符串，将指定字符串连接到此字符串的结尾。
      */
     @Test
     public void concat(){
@@ -172,6 +176,7 @@ public class TestString {
     }
 
     /**
+     * replace：替换指定字符
      *replace和replaceAll都是替换所有
      * 但是replaceAll会在替换之前判断被替换的参数是不是一个正则表达式
      */
@@ -196,6 +201,68 @@ public class TestString {
          * replaceAll 的参数是 regex，即基于正则表达式的替换。比如，可以通过 replaceAll ("\d", “*”) 把一个字符串所有的数字字符都换成星号；
          * String 类执行了替换操作后，返回一个新的对象，源字符串的内容是没有发生改变的。
          */
+    }
 
+    /**
+     * split：根据指定字符切割
+     * 字符串以regex方式进行split，获得数组长度：length（方便理解），
+     * 若limit参数大于等于这个length或limit参数为非正数，则字符串以regex方式进行最大split；
+     * 若limit参数处于0和length之间，则字符串以regex方式进行limit - 1次split，split后剩下的字符不会再进行split。
+     */
+    @Test
+    public void split(){
+        String str="110220330440";
+        //limit 默认为0
+        String[] as = str.split("0");//  ["11", "22", "33", "44"]
+
+        //若limit参数处于0和length之间，则字符串以regex方式进行limit - 1次split，split后剩下的字符不会再进行split。
+        String[] as2 = str.split("0", 0);//  ["11", "22", "33", "44"]
+        String[] as3 = str.split("0", 1);//  ["110220330440"]
+        String[] as4 = str.split("0", 2);//  ["11", "220330440"]
+        String[] as5 = str.split("0", 3);//  ["11", "22", "330440"]
+        String[] as6 = str.split("0", 4);//  ["11", "22", "33", "440"]
+
+        //若limit参数大于等于这个length或limit参数为非正数，则字符串以regex方式进行最大split；
+        String[] as1 = str.split("0", -1);//  ["11", "22", "33", "44", ""]
+        String[] as7 = str.split("0", 5);//   ["11", "22", "33", "44", ""]
+        String[] as8 = str.split("0", 6);//   ["11", "22", "33", "44", ""]
+    }
+
+    /**
+     * join：String集合快速转化为指定分隔符分割的字符串；最后一个元素后面无分隔符；
+     * JDK8新增
+     */
+    @Test
+    public void join(){
+        final String SEPARATOR = ",";
+        List<String> cities = Arrays.asList("Milan", "London", "New York", "San Francisco");
+        String joinStr = String.join(SEPARATOR, cities); //  Milan,London,New York,San Francisco
+
+        String joinStr2 = cities.stream().collect(Collectors.joining(SEPARATOR));  // Milan,London,New York,San Francisco
+    }
+
+    /**
+     * toUpperCase:转大写
+     * toLowerCase：转小写
+     */
+    @Test
+    public void toUpperCase(){
+        String str="abcd";
+        String s = str.toUpperCase();
+
+        String str2="ABCD";
+        String s1 = str2.toLowerCase();
+
+        //忽略大小写
+        boolean b = str.equalsIgnoreCase(str2);
+    }
+
+    /**
+     * trim：去除首尾空格
+     */
+    @Test
+    public void trim(){
+        String str="  ab   cd   ";
+        String trim = str.trim();
     }
 }

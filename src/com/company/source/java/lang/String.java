@@ -2380,6 +2380,7 @@ public final class String
             int off = 0;
             int next = 0;
             boolean limited = limit > 0;
+            //存放按照指定字符分割完成的值
             ArrayList<String> list = new ArrayList<>();
             while ((next = indexOf(ch, off)) != -1) {
                 if (!limited || list.size() < limit - 1) {
@@ -2528,12 +2529,23 @@ public final class String
      * @see    java.util.StringJoiner
      * @since 1.8
      */
+    /**
+     *
+     * @param delimiter 分隔符
+     * @param elements  需要连接的字符串
+     * @return
+     */
     public static String join(CharSequence delimiter,
             Iterable<? extends CharSequence> elements) {
+        //空指针判断
         Objects.requireNonNull(delimiter);
         Objects.requireNonNull(elements);
+
+        // 此处用到了StringJoiner(JDK 8引入的类）
+        // 先构造一个以参数delimiter为分隔符的StringJoiner对象
         StringJoiner joiner = new StringJoiner(delimiter);
         for (CharSequence cs: elements) {
+            // 拼接字符
             joiner.add(cs);
         }
         return joiner.toString();

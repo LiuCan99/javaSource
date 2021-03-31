@@ -63,8 +63,11 @@ package java.util;
  * @since  1.8
 */
 public final class StringJoiner {
+    //前缀
     private final String prefix;
+    //分隔符
     private final String delimiter;
+    //后缀
     private final String suffix;
 
     /*
@@ -73,6 +76,7 @@ public final class StringJoiner {
      * suffix, so that we can more easily add elements without having to jigger
      * the suffix each time.
      */
+    //值
     private StringBuilder value;
 
     /*
@@ -96,6 +100,7 @@ public final class StringJoiner {
      *         element added to the {@code StringJoiner} value
      * @throws NullPointerException if {@code delimiter} is {@code null}
      */
+    //构造器
     public StringJoiner(CharSequence delimiter) {
         this(delimiter, "", "");
     }
@@ -159,14 +164,18 @@ public final class StringJoiner {
     @Override
     public String toString() {
         if (value == null) {
+            // value未进行任何字符拼接时反悔emptyValue
             return emptyValue;
         } else {
             if (suffix.equals("")) {
+                // 后缀为""字符时，直接返回value
                 return value.toString();
             } else {
+                // 获取value未拼接后缀的长度
                 int initialLength = value.length();
                 String result = value.append(suffix).toString();
                 // reset value to pre-append initialLength
+                // 此处是为了保证value.toString()为未拼接后缀前的字符串
                 value.setLength(initialLength);
                 return result;
             }
@@ -181,6 +190,7 @@ public final class StringJoiner {
      * @param  newElement The element to add
      * @return a reference to this {@code StringJoiner}
      */
+    //拼接
     public StringJoiner add(CharSequence newElement) {
         prepareBuilder().append(newElement);
         return this;
@@ -218,10 +228,14 @@ public final class StringJoiner {
         return this;
     }
 
+    //预拼接value
     private StringBuilder prepareBuilder() {
+        // value已加前缀
         if (value != null) {
+            // 此时添加分隔符
             value.append(delimiter);
         } else {
+            // value未加前缀时需要先添加前缀
             value = new StringBuilder().append(prefix);
         }
         return value;
