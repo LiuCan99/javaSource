@@ -1,12 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="24e7a4d3-e1cf-47e8-a7dc-71ab5a2a9ead" name="Default Changelist" comment="String">
-      <change afterPath="$PROJECT_DIR$/src/com/company/algorithm/sort/BubbleSort.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/company/algorithm/sort/SelectionSort.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/company/test/list/TestList.java" afterDir="false" />
+    <list default="true" id="24e7a4d3-e1cf-47e8-a7dc-71ab5a2a9ead" name="Default Changelist" comment="算法：冒泡、选择排序">
+      <change afterPath="$PROJECT_DIR$/src/com/company/algorithm/sort/InsertionSort.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaSource/com/company/test/string/TestString.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaSource/com/company/test/string/TestString.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JavaSource/java/util/AbstractList.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaSource/java/util/AbstractList.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JavaSource/java/util/ArrayList$ArrayListSpliterator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaSource/java/util/ArrayList$ArrayListSpliterator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JavaSource/java/util/ArrayList$Itr.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaSource/java/util/ArrayList$Itr.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JavaSource/java/util/ArrayList$ListItr.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaSource/java/util/ArrayList$ListItr.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JavaSource/java/util/ArrayList$SubList$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaSource/java/util/ArrayList$SubList$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JavaSource/java/util/ArrayList$SubList.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaSource/java/util/ArrayList$SubList.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JavaSource/java/util/ArrayList.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaSource/java/util/ArrayList.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JavaSource/java/util/RandomAccessSubList.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaSource/java/util/RandomAccessSubList.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JavaSource/java/util/SubList$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaSource/java/util/SubList$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JavaSource/java/util/SubList.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaSource/java/util/SubList.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/source/java/util/AbstractList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/source/java/util/AbstractList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/source/java/util/ArrayList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/source/java/util/ArrayList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/test/list/TestList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/test/list/TestList.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,7 +64,7 @@
     <property name="project.structure.side.proportion" value="0.13394919" />
     <property name="settings.editor.selected.configurable" value="JavaScript.Libraries" />
   </component>
-  <component name="RunManager" selected="JUnit.BubbleSort.bubble">
+  <component name="RunManager" selected="JUnit.TestList.remove">
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -66,81 +76,81 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BubbleSort.bubble" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestList.add" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="JavaSource" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.company.algorithm.sort.*" />
+          <option name="PATTERN" value="com.company.test.list.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.company.algorithm.sort" />
-      <option name="MAIN_CLASS_NAME" value="com.company.algorithm.sort.BubbleSort" />
-      <option name="METHOD_NAME" value="bubble" />
+      <option name="PACKAGE_NAME" value="com.company.test.list" />
+      <option name="MAIN_CLASS_NAME" value="com.company.test.list.TestList" />
+      <option name="METHOD_NAME" value="add" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestString.join" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestList.contains" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="JavaSource" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.company.test.string.*" />
+          <option name="PATTERN" value="com.company.test.list.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.company.test.string" />
-      <option name="MAIN_CLASS_NAME" value="com.company.test.string.TestString" />
-      <option name="METHOD_NAME" value="join" />
+      <option name="PACKAGE_NAME" value="com.company.test.list" />
+      <option name="MAIN_CLASS_NAME" value="com.company.test.list.TestList" />
+      <option name="METHOD_NAME" value="contains" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestString.split" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestList.get" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="JavaSource" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.company.test.string.*" />
+          <option name="PATTERN" value="com.company.test.list.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.company.test.string" />
-      <option name="MAIN_CLASS_NAME" value="com.company.test.string.TestString" />
-      <option name="METHOD_NAME" value="split" />
+      <option name="PACKAGE_NAME" value="com.company.test.list" />
+      <option name="MAIN_CLASS_NAME" value="com.company.test.list.TestList" />
+      <option name="METHOD_NAME" value="get" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestString.toUpperCase" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestList.remove" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="JavaSource" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.company.test.string.*" />
+          <option name="PATTERN" value="com.company.test.list.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.company.test.string" />
-      <option name="MAIN_CLASS_NAME" value="com.company.test.string.TestString" />
-      <option name="METHOD_NAME" value="toUpperCase" />
+      <option name="PACKAGE_NAME" value="com.company.test.list" />
+      <option name="MAIN_CLASS_NAME" value="com.company.test.list.TestList" />
+      <option name="METHOD_NAME" value="remove" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestString.trim" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestList.set" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="JavaSource" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.company.test.string.*" />
+          <option name="PATTERN" value="com.company.test.list.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.company.test.string" />
-      <option name="MAIN_CLASS_NAME" value="com.company.test.string.TestString" />
-      <option name="METHOD_NAME" value="trim" />
+      <option name="PACKAGE_NAME" value="com.company.test.list" />
+      <option name="MAIN_CLASS_NAME" value="com.company.test.list.TestList" />
+      <option name="METHOD_NAME" value="set" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -211,11 +221,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.BubbleSort.bubble" />
-        <item itemvalue="JUnit.TestString.trim" />
-        <item itemvalue="JUnit.TestString.toUpperCase" />
-        <item itemvalue="JUnit.TestString.join" />
-        <item itemvalue="JUnit.TestString.split" />
+        <item itemvalue="JUnit.TestList.remove" />
+        <item itemvalue="JUnit.TestList.add" />
+        <item itemvalue="JUnit.TestList.set" />
+        <item itemvalue="JUnit.TestList.get" />
+        <item itemvalue="JUnit.TestList.contains" />
       </list>
     </recent_temporary>
   </component>
@@ -238,7 +248,9 @@
       <workItem from="1616752360411" duration="44000" />
       <workItem from="1617095788231" duration="11738000" />
       <workItem from="1617180422851" duration="526000" />
-      <workItem from="1617180995755" duration="5404000" />
+      <workItem from="1617180995755" duration="5731000" />
+      <workItem from="1617240861127" duration="6593000" />
+      <workItem from="1617259787402" duration="11449000" />
     </task>
     <task id="LOCAL-00001" summary="String字符串源码学习">
       <created>1616752389889</created>
@@ -261,7 +273,14 @@
       <option name="project" value="LOCAL" />
       <updated>1617183824440</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="算法：冒泡、选择排序">
+      <created>1617187284688</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1617187284688</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -283,7 +302,8 @@
     <MESSAGE value="String字符串源码学习" />
     <MESSAGE value="String replace方法" />
     <MESSAGE value="String" />
-    <option name="LAST_COMMIT_MESSAGE" value="String" />
+    <MESSAGE value="算法：冒泡、选择排序" />
+    <option name="LAST_COMMIT_MESSAGE" value="算法：冒泡、选择排序" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -370,8 +390,48 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/com/company/algorithm/sort/BubbleSort.java</url>
-          <line>39</line>
+          <line>41</line>
           <option name="timeStamp" value="44" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/company/test/list/TestList.java</url>
+          <line>19</line>
+          <option name="timeStamp" value="50" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/company/test/list/TestList.java</url>
+          <line>125</line>
+          <option name="timeStamp" value="51" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/company/source/java/util/ArrayList.java</url>
+          <line>217</line>
+          <option name="timeStamp" value="52" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/company/source/java/util/ArrayList.java</url>
+          <line>196</line>
+          <option name="timeStamp" value="53" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/company/source/java/util/ArrayList.java</url>
+          <line>345</line>
+          <option name="timeStamp" value="57" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/company/source/java/util/ArrayList.java</url>
+          <line>251</line>
+          <option name="timeStamp" value="72" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/company/source/java/util/ArrayList.java</url>
+          <line>540</line>
+          <option name="timeStamp" value="73" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/company/test/list/TestList.java</url>
+          <line>54</line>
+          <option name="timeStamp" value="74" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

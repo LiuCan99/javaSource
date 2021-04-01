@@ -597,6 +597,7 @@ public abstract class AbstractList<E> extends AbstractCollection<E> implements L
      * bogus {@code ConcurrentModificationExceptions}.  If an implementation
      * does not wish to provide fail-fast iterators, this field may be
      * ignored.
+     * 集合数组修改次数的标识
      */
     protected transient int modCount = 0;
 
