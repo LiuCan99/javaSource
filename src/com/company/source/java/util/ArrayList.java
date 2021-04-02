@@ -248,22 +248,36 @@ public class ArrayList<E> extends AbstractList<E>
         }
     }
 
+
     private static int calculateCapacity(Object[] elementData, int minCapacity) {
+        //如果当前数组是空的
         if (elementData == DEFAULTCAPACITY_EMPTY_ELEMENTDATA) {
+            //比较所需容量和默认容量，取其大者作为所需最小容量值
             return Math.max(DEFAULT_CAPACITY, minCapacity);
         }
         return minCapacity;
     }
 
+    /**
+     * 实现list的容量换算
+     * @param minCapacity 最小的容量（默认为10）
+     */
     private void ensureCapacityInternal(int minCapacity) {
         ensureExplicitCapacity(calculateCapacity(elementData, minCapacity));
     }
 
+    /**
+     * 进一步确定容量，以及是否需要扩容
+     * @param minCapacity
+     */
     private void ensureExplicitCapacity(int minCapacity) {
+        //集合数组修改次数的标识
         modCount++;
 
         // overflow-conscious code
+        //当所需最小容量大于当前elementData数组长度时，要进行扩容操作
         if (minCapacity - elementData.length > 0)
+            //扩容
             grow(minCapacity);
     }
 
@@ -283,7 +297,9 @@ public class ArrayList<E> extends AbstractList<E>
      */
     private void grow(int minCapacity) {
         // overflow-conscious code
+        //原数组长度
         int oldCapacity = elementData.length;
+        //新数组扩容   位运算  (oldCapacity + (oldCapacity >> 1))约是oldCapacity 的1.5倍。
         int newCapacity = oldCapacity + (oldCapacity >> 1);
         if (newCapacity - minCapacity < 0)
             newCapacity = minCapacity;
@@ -502,8 +518,9 @@ public class ArrayList<E> extends AbstractList<E>
      * @return <tt>true</tt> (as specified by {@link Collection#add})
      */
     public boolean add(E e) {
-        //判断是否需要扩容
+        //来调整数组的长度(自动扩容) ensureCapacityInternal(当前实际存储数据数量+1)
         ensureCapacityInternal(size + 1);  // Increments modCount!!
+        //将第[size++]元素赋值为e,在数组的尾部追加元素
         elementData[size++] = e;
         return true;
     }
@@ -577,6 +594,7 @@ public class ArrayList<E> extends AbstractList<E>
             //如果o=null 则查询集合中是否存在null元素，找到索引然后删除
             for (int index = 0; index < size; index++)
                 if (elementData[index] == null) {
+                    //null需要单独判断，否则会抛空指针异常
                     fastRemove(index);
                     return true;
                 }
@@ -614,7 +632,8 @@ public class ArrayList<E> extends AbstractList<E>
     public void clear() {
         modCount++;
 
-        // clear to let GC do its work 清空所以元素
+        // clear to let GC do its work
+        // 使每一个元素都为null，使他们在没有被外部引用的情况下可以被垃圾回收
         for (int i = 0; i < size; i++)
             elementData[i] = null;
 
@@ -750,6 +769,7 @@ public class ArrayList<E> extends AbstractList<E>
      * @see Collection#contains(Object)
      */
     public boolean removeAll(Collection<?> c) {
+        //判断对象是否为null
         Objects.requireNonNull(c);
         return batchRemove(c, false);
     }
@@ -780,6 +800,7 @@ public class ArrayList<E> extends AbstractList<E>
         int r = 0, w = 0;
         boolean modified = false;
         try {
+            //检查迭代器顺序返回的每个元素是否包含在特定的集合中。如果存在，调用迭代器的remove方法将它从集合中移除
             for (; r < size; r++)
                 if (c.contains(elementData[r]) == complement)
                     elementData[w++] = elementData[r];
@@ -904,38 +925,66 @@ public class ArrayList<E> extends AbstractList<E>
      * An optimized version of AbstractList.Itr
      */
     private class Itr implements Iterator<E> {
+        // 下一个元素返回的索引
         int cursor;       // index of next element to return
+        // 最后一个元素返回的索引
         int lastRet = -1; // index of last element returned; -1 if no such
         int expectedModCount = modCount;
 
         Itr() {}
 
+        /**
+         * 是否有下一个元素
+         * @return
+         */
         public boolean hasNext() {
             return cursor != size;
         }
 
+        /**
+         * 返回list中的值
+         * @return
+         */
         @SuppressWarnings("unchecked")
         public E next() {
+            //检查是否有修改
             checkForComodification();
+
+            //i当前元素的索引
             int i = cursor;
+
+            //第一次检查：角标是否越界越界
             if (i >= size)
                 throw new NoSuchElementException();
             Object[] elementData = ArrayList.this.elementData;
+
+            //第二次检查,list集合中数量是否发生变化
             if (i >= elementData.length)
                 throw new ConcurrentModificationException();
+
+            //cursor 下一个元素的索引
             cursor = i + 1;
+
+            //最后一个元素返回的索引
             return (E) elementData[lastRet = i];
         }
 
+        /**
+         * 移除集合中的元素
+         */
         public void remove() {
             if (lastRet < 0)
                 throw new IllegalStateException();
             checkForComodification();
 
             try {
+                //移除list中的元素
                 ArrayList.this.remove(lastRet);
+                //由于cursor比lastRet大1，所有这行代码是指指针往回移动一位
                 cursor = lastRet;
+                //将最后一个元素返回的索引重置为-1
                 lastRet = -1;
+                //重新设置了expectedModCount的值，避免了ConcurrentModificationException的产生
                 expectedModCount = modCount;
             } catch (IndexOutOfBoundsException ex) {
                 throw new ConcurrentModificationException();
@@ -964,7 +1013,11 @@ public class ArrayList<E> extends AbstractList<E>
             checkForComodification();
         }
 
+        /**
+         * 检查是否有修改
+         */
         final void checkForComodification() {
+            //集合数组修改次数的标识  预期修改次数
             if (modCount != expectedModCount)
                 throw new ConcurrentModificationException();
         }
@@ -1171,6 +1224,7 @@ public class ArrayList<E> extends AbstractList<E>
 
                 @SuppressWarnings("unchecked")
                 public E next() {
+                    //检查是否有修改
                     checkForComodification();
                     int i = cursor;
                     if (i >= SubList.this.size)
@@ -1459,14 +1513,20 @@ public class ArrayList<E> extends AbstractList<E>
 
     @Override
     public boolean removeIf(Predicate<? super E> filter) {
+        //校验filter是否为null
         Objects.requireNonNull(filter);
-        // figure out which elements are to be removed
-        // any exception thrown from the filter predicate at this stage
-        // will leave the collection unmodified
+
+        //找出要删除的元素
+        //在此阶段从筛选器谓词引发的任何异常
+        //将使集合保持不变
         int removeCount = 0;
+
+        //使用了BitSet用来记录被删除的元素的下标
         final BitSet removeSet = new BitSet(size);
         final int expectedModCount = modCount;
         final int size = this.size;
+
+        //这个循环把符合条件的待删除的元素的下标设置到BitSet中，即BitSet中对应的下标设为true
         for (int i=0; modCount == expectedModCount && i < size; i++) {
             @SuppressWarnings("unchecked")
             final E element = (E) elementData[i];
@@ -1475,6 +1535,8 @@ public class ArrayList<E> extends AbstractList<E>
                 removeCount++;
             }
         }
+
+        //检测是否有其他线程并发修改这个ArrayList
         if (modCount != expectedModCount) {
             throw new ConcurrentModificationException();
         }
@@ -1483,6 +1545,11 @@ public class ArrayList<E> extends AbstractList<E>
         final boolean anyToRemove = removeCount > 0;
         if (anyToRemove) {
             final int newSize = size - removeCount;
+            //重点讲解这一步。刚开始看的时候一直认为这会导致死循环，
+            //实际上这个循环里真正控制循环边界条件的是j，而不是i，因为j最后一定会到达newSize，
+            //而i则不一定能到达size, 在实际使用中i有很大概率到不了size，
+             /**所以我认为这里的循环退出的判断应该是j<newSize在前面，形成“与”条件判断的短路**/
+
             for (int i=0, j=0; (i < size) && (j < newSize); i++, j++) {
                 i = removeSet.nextClearBit(i);
                 elementData[j] = elementData[i];
