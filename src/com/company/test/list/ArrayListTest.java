@@ -8,10 +8,11 @@ import java.util.Iterator;
 public class ArrayListTest {
 
     /**
-     * ArrayList数组初始化
+     * ArrayList数组
      * 底层是一个动态数组，初始化大小为10，线程不安全，元素允许重复
      * 扩容为原数组的1.5倍，当添加第11个元素时扩容
      * 扩容时会创建一个新的容量的数组，将原数组的元素拷贝，原数组将会被GC回收
+     * 遍历时很快，但是插入、删除时都需要移动后面的元素，效率略差些
      */
     @Test
     public void initArray(){

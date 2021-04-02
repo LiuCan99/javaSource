@@ -84,24 +84,26 @@ public class LinkedList<E>
     extends AbstractSequentialList<E>
     implements List<E>, Deque<E>, Cloneable, java.io.Serializable
 {
+
+    //用来记录LinkedList的大小
     transient int size = 0;
 
     /**
-     * Pointer to first node.
+     * 指向第一个节点的指针
      * Invariant: (first == null && last == null) ||
      *            (first.prev == null && first.item != null)
      */
     transient Node<E> first;
 
     /**
-     * Pointer to last node.
+     * 指向最后一个节点的指针
      * Invariant: (first == null && last == null) ||
      *            (last.next == null && last.item != null)
      */
     transient Node<E> last;
 
     /**
-     * Constructs an empty list.
+     * 构造一个空列表
      */
     public LinkedList() {
     }
