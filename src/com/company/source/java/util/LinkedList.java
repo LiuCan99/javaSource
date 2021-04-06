@@ -85,10 +85,13 @@ public class LinkedList<E>
     implements List<E>, Deque<E>, Cloneable, java.io.Serializable
 {
 
-    //用来记录LinkedList的大小
+    /**
+     * 用来记录LinkedList的大小
+     */
     transient int size = 0;
 
     /**
+     * Node 类是LinkedList中的私有内部类，LinkedList中就是通过Node来存储集合中的元素。
      * 指向第一个节点的指针
      * Invariant: (first == null && last == null) ||
      *            (first.prev == null && first.item != null)
@@ -117,7 +120,9 @@ public class LinkedList<E>
      * @throws NullPointerException if the specified collection is null
      */
     public LinkedList(Collection<? extends E> c) {
+        //首先调用一下空的构造器
         this();
+        //然后调用addAll(c)方法
         addAll(c);
     }
 
@@ -138,15 +143,23 @@ public class LinkedList<E>
 
     /**
      * Links e as last element.
+     * 链接e作为最后一个元素。
      */
     void linkLast(E e) {
+        //因为我们需要把该元素设置为尾节点，所以需要新建一个变量把尾节点存储起来。
         final Node<E> l = last;
+        //然后新建一个节点，把last指向l，然后自身设置为尾结点。(指向当前节点的前一个节点的指针,节点的值,当前节点的后一个节点的指针)
         final Node<E> newNode = new Node<>(l, e, null);
         last = newNode;
+        //再判断一下l是否为空，如果为空的话，说明原来的LinkedList为空。
         if (l == null)
+            //所以同时也需要把新节点设置为头节点
             first = newNode;
         else
+            //否则就把l的next设置为newNode
             l.next = newNode;
+
+        //size和modCount自增。
         size++;
         modCount++;
     }
@@ -206,29 +219,42 @@ public class LinkedList<E>
     }
 
     /**
-     * Unlinks non-null node x.
+     * 删除一个节点（该节点不为空）
      */
-    E unlink(Node<E> x) {
+        E unlink(Node<E> x) {
         // assert x != null;
+        //存储当前被删除节点的值
         final E element = x.item;
+        //待删除节点的后一个节点
         final Node<E> next = x.next;
+        //待删除节点的前一个节点
         final Node<E> prev = x.prev;
 
         if (prev == null) {
+            //待删除节点的前一个节点是否为空，如果为空的话，表明待删除的节点是我们的头结点。则需要把待删除节点的后一个节点设置为头结点
             first = next;
         } else {
+            //如果不为空，就需要把待删除的节点的前、后节点链接起来
+            ///待删除节点的前一个节点的下一个节点=待删除节点的后一个节点
             prev.next = next;
+            //删除节点的上一个节点=null
             x.prev = null;
         }
 
         if (next == null) {
+            //接着判断一下待删除的节点是否为空，如果为空的话，则表明待删除节点是尾节点，所以需要我们把待删除节点的前一个节点设置为尾节点
             last = prev;
         } else {
+            ///待删除节点的后一个节点的前一个节点=待删除节点的前一个节点
             next.prev = prev;
+            //删除节点的下一个节点=null
             x.next = null;
         }
 
+        //待删除元素=null
         x.item = null;
+
+        //更新集合长度、集合修改次数
         size--;
         modCount++;
         return element;
@@ -307,6 +333,7 @@ public class LinkedList<E>
     }
 
     /**
+     * 判断LinkedList是否包含某一个元素
      * Returns {@code true} if this list contains the specified element.
      * More formally, returns {@code true} if and only if this list contains
      * at least one element {@code e} such that
@@ -386,6 +413,7 @@ public class LinkedList<E>
      * @throws NullPointerException if the specified collection is null
      */
     public boolean addAll(Collection<? extends E> c) {
+        //通过调用addAll(int index, Collection<? extends E> c) 完成集合的添加
         return addAll(size, c);
     }
 
@@ -405,13 +433,30 @@ public class LinkedList<E>
      * @throws NullPointerException if the specified collection is null
      */
     public boolean addAll(int index, Collection<? extends E> c) {
+        //几乎所有的涉及到在指定位置添加或者删除或修改操作都需要判断传进来的参数是否合法。
         checkPositionIndex(index);
 
+        //先把集合转化为数组，然后为该数组添加一个新的引用（Objext[] a）
         Object[] a = c.toArray();
+        //新建一个变量存储数组的长度
         int numNew = a.length;
+        //如果待添加的集合为空，直接返回，无需进行后面的步骤。后面都是用来把集合中的元素添加到LinkedList中
         if (numNew == 0)
             return false;
 
+        //这里定义了两个节点：（读这里的程序的时候，强烈建议自己画一个图，辅助你理解这个过程）。
+        //Node<E> succ：指代待添加节点的位置。
+        //Node<E> pred：指代待添加节点的前一个节点。
+        //下面的代码是依据新添加的元素的位置分为两个分支：
+        //①新添加的元素的位置位于LinkedList最后一个元素的后面。
+        //新添加的元素的位置位于LinkedList中。
+        //如果index==size;说明此时需要添加LinkedList中的集合中的每一个元素都是在LinkedList最后面。
+        // 所以把succ设置为空，pred指向尾节点。
+        //否则的话succ指向插入待插入位置的节点。这里用到了node（int index）方法，这个方法
+        //后面会详细分析，这里只需要知道该方法返回对应索引位置上的Node（节点）。pred指向succ节点的前一个节点。
+
+        //Node<E> succ：指代待添加节点的位置。
+        //Node<E> pred：指代待添加节点的前一个节点。
         Node<E> pred, succ;
         if (index == size) {
             succ = null;
@@ -421,6 +466,11 @@ public class LinkedList<E>
             pred = succ.prev;
         }
 
+
+        //接着遍历数组中的每个元素。在每次遍历的时候，都新建一个节点，该节点的值存储数组a中遍历的值，
+        // 该节点的prev用来存储pred节点，next设置为空。接着判断一下该节点的前一个节点是否为空，如果为空的话,
+        // 则把当前节点设置为头节点。否则的话就把当前节点的前一个节点的next值设置为当前节点。
+        // 最后把pred指向当前节点，以便后续新节点的添加。
         for (Object o : a) {
             @SuppressWarnings("unchecked") E e = (E) o;
             Node<E> newNode = new Node<>(pred, e, null);
@@ -431,6 +481,15 @@ public class LinkedList<E>
             pred = newNode;
         }
 
+
+        //这里仍然和上面一样，分两种情况对待：
+        //①当succ==null（也就是新添加的节点位于LinkedList集合的最后一个元素的后面），
+        //通过遍历上面的a的所有元素，此时pred指向的是LinkedList中的最后一个元素，所以把
+        //last指向pred指向的节点。
+        //当不为空的时候，表明在LinkedList集合中添加的元素，需要把pred的next指向succ上，
+        //succ的prev指向pred。
+        //最后把集合的大小设置为新的大小。
+        //modCount（修改的次数）自增。
         if (succ == null) {
             last = pred;
         } else {
@@ -444,6 +503,9 @@ public class LinkedList<E>
     }
 
     /**
+     * 清空LinkedList中的所有元素
+     * 直接遍历整个LinkedList，然后把每个节点都置空。
+     * 最后要把头节点和尾节点设置为空，size也设置为空，但是modCount仍然自增
      * Removes all of the elements from this list.
      * The list will be empty after this call returns.
      */
@@ -557,13 +619,19 @@ public class LinkedList<E>
             throw new IndexOutOfBoundsException(outOfBoundsMsg(index));
     }
 
+    /**
+     * 几乎所有的涉及到在指定位置添加或者删除或修改操作都需要判断传进来的参数是否合法。
+     * @param index
+     */
     private void checkPositionIndex(int index) {
         if (!isPositionIndex(index))
             throw new IndexOutOfBoundsException(outOfBoundsMsg(index));
     }
 
     /**
-     * Returns the (non-null) Node at the specified element index.
+     *计算指定索引上的节点（返回Node）
+     * LinkedList还对整个做了优化，不是盲目地直接从头进行遍历，而是先比较一下index更靠近链表（LinkedList）的头节点还是尾节点。
+     * 然后进行遍历，获取相应的节点。
      */
     Node<E> node(int index) {
         // assert isElementIndex(index);
@@ -596,6 +664,8 @@ public class LinkedList<E>
      */
     public int indexOf(Object o) {
         int index = 0;
+        //obejct是否为空
+        //从头节点开始遍历LinkedList，判断是否有与object相等的元素，如果有，则返回对应的位置index，如果找不到，则返回-1。
         if (o == null) {
             for (Node<E> x = first; x != null; x = x.next) {
                 if (x.item == null)
@@ -969,6 +1039,12 @@ public class LinkedList<E>
         }
     }
 
+    /**
+     * E ：节点的值。
+     * Node next：当前节点的后一个节点的引用（可以理解为指向当前节点的后一个节点的指针）
+     * Node prev:当前节点的前一个节点的引用（可以理解为指向当前节点的前一个节点的指针）
+     * @param <E>
+     */
     private static class Node<E> {
         E item;
         Node<E> next;
