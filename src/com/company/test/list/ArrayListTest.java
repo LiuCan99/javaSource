@@ -8,11 +8,14 @@ import java.util.Iterator;
 public class ArrayListTest {
 
     /**
-     * ArrayList数组
+     * ArrayList集合
      * 底层是一个动态数组，初始化大小为10，线程不安全，元素允许重复
      * 扩容为原数组的1.5倍，当添加第11个元素时扩容
      * 扩容时会创建一个新的容量的数组，将原数组的元素拷贝，原数组将会被GC回收
      * 遍历时很快，但是插入、删除时都需要移动后面的元素，效率略差些
+     *
+     * 因为ArrayList无法存储基本类型，int long等需要封装成Integer,Long类，
+     * 而自动装箱和拆箱的操作也会有一定的性能消耗，所以如果关注性能或者想用基本类型就选用数组
      */
     @Test
     public void initArray(){

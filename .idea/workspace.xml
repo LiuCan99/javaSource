@@ -3,13 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="24e7a4d3-e1cf-47e8-a7dc-71ab5a2a9ead" name="Default Changelist" comment="LinkedList源码学习">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaSource/java/util/LinkedList$DescendingIterator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaSource/java/util/LinkedList$DescendingIterator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaSource/java/util/LinkedList$LLSpliterator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaSource/java/util/LinkedList$LLSpliterator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaSource/java/util/LinkedList$ListItr.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaSource/java/util/LinkedList$ListItr.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaSource/java/util/LinkedList$Node.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaSource/java/util/LinkedList$Node.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaSource/java/util/LinkedList.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaSource/java/util/LinkedList.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/source/java/util/LinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/source/java/util/LinkedList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/test/list/LinkedListTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/test/list/LinkedListTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/source/java/util/HashMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/source/java/util/HashMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/test/hashmap/TestHashMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/test/hashmap/TestHashMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/test/list/ArrayListTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/test/list/ArrayListTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,7 +46,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../AIBOT" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15332031" />
@@ -246,7 +242,7 @@
       <workItem from="1617180995755" duration="5731000" />
       <workItem from="1617240861127" duration="6593000" />
       <workItem from="1617259787402" duration="28503000" />
-      <workItem from="1617672296404" duration="6226000" />
+      <workItem from="1617672296404" duration="19957000" />
     </task>
     <task id="LOCAL-00001" summary="String字符串源码学习">
       <created>1616752389889</created>
@@ -297,7 +293,14 @@
       <option name="project" value="LOCAL" />
       <updated>1617358703173</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="LinkedList源码学习">
+      <created>1617679101181</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1617679101181</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -328,11 +331,6 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/company/test/hashmap/TestHashMap.java</url>
-          <line>7</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/com/company/test/string/TestString.java</url>
           <line>22</line>
@@ -415,12 +413,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/com/company/test/list/ArrayListTest.java</url>
-          <line>20</line>
+          <line>23</line>
           <option name="timeStamp" value="50" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/com/company/test/list/ArrayListTest.java</url>
-          <line>126</line>
+          <line>129</line>
           <option name="timeStamp" value="51" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -435,17 +433,17 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/com/company/test/list/ArrayListTest.java</url>
-          <line>55</line>
+          <line>58</line>
           <option name="timeStamp" value="74" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/com/company/test/list/ArrayListTest.java</url>
-          <line>176</line>
+          <line>179</line>
           <option name="timeStamp" value="79" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/com/company/test/list/ArrayListTest.java</url>
-          <line>229</line>
+          <line>232</line>
           <option name="timeStamp" value="80" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -455,7 +453,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/com/company/test/list/ArrayListTest.java</url>
-          <line>214</line>
+          <line>217</line>
           <option name="timeStamp" value="106" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
