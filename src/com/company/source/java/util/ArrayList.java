@@ -273,9 +273,7 @@ public class ArrayList<E> extends AbstractList<E>
     private void ensureExplicitCapacity(int minCapacity) {
         //集合数组修改次数的标识
         modCount++;
-
-        // overflow-conscious code
-        //当所需最小容量大于当前elementData数组长度时，要进行扩容操作
+        //当所需最小容量 > elementData数组长度时，要进行扩容操作
         if (minCapacity - elementData.length > 0)
             //扩容
             grow(minCapacity);
@@ -290,22 +288,20 @@ public class ArrayList<E> extends AbstractList<E>
     private static final int MAX_ARRAY_SIZE = Integer.MAX_VALUE - 8;
 
     /**
-     * Increases the capacity to ensure that it can hold at least the
-     * number of elements specified by the minimum capacity argument.
-     *
+     * 增加容量以确保它至少可以容纳最小容量参数指定的元素数。
      * @param minCapacity the desired minimum capacity
      */
     private void grow(int minCapacity) {
-        // overflow-conscious code
         //原数组长度
         int oldCapacity = elementData.length;
-        //新数组扩容   位运算  (oldCapacity + (oldCapacity >> 1))约是oldCapacity 的1.5倍。
+        //新数组扩容
+        //位运算  (oldCapacity + (oldCapacity >> 1))约是oldCapacity 的1.5倍。
         int newCapacity = oldCapacity + (oldCapacity >> 1);
         if (newCapacity - minCapacity < 0)
             newCapacity = minCapacity;
         if (newCapacity - MAX_ARRAY_SIZE > 0)
             newCapacity = hugeCapacity(minCapacity);
-        // minCapacity is usually close to size, so this is a win:
+        //将原数组拷贝到一个新的长度的数组中
         elementData = Arrays.copyOf(elementData, newCapacity);
     }
 
@@ -472,29 +468,23 @@ public class ArrayList<E> extends AbstractList<E>
     }
 
     /**
-     * Returns the element at the specified position in this list.
-     *
-     * @param  index index of the element to return
-     * @return the element at the specified position in this list
+     * 返回此列表中指定位置的元素。
+     * @param  index 要返回的元素的索引
+     * @return 此列表中指定位置的元素
      * @throws IndexOutOfBoundsException {@inheritDoc}
      */
     public E get(int index) {
         //校验索引是否越界
         rangeCheck(index);
-
         //返回指定索引元素
         return elementData(index);
     }
 
     /**
-     * Replaces the element at the specified position in this list with
-     * the specified element.
-     *
-     *将此列表中指定位置的元素替换为
-     *指定的元素。
-     * @param index index of the element to replace 要替换的元素的索引
-     * @param element element to be stored at the specified position 要存储在指定位置的元素
-     * @return the element previously at the specified position 先前位于指定位置的元素
+     *将此列表中指定位置的元素替换为指定的元素。
+     * @param index 要替换的元素的索引
+     * @param element  要存储在指定位置的元素
+     * @return 先前位于指定位置的元素
      * @throws IndexOutOfBoundsException {@inheritDoc}
      */
     public E set(int index, E element) {
@@ -512,9 +502,8 @@ public class ArrayList<E> extends AbstractList<E>
     }
 
     /**
-     * Appends the specified element to the end of this list.
-     *
-     * @param e element to be appended to this list
+     * 将指定的元素追加到此列表的末尾。
+     * @param e 要添加到此列表的元素
      * @return <tt>true</tt> (as specified by {@link Collection#add})
      */
     public boolean add(E e) {
@@ -526,18 +515,18 @@ public class ArrayList<E> extends AbstractList<E>
     }
 
     /**
-     * Inserts the specified element at the specified position in this
-     * list. Shifts the element currently at that position (if any) and
-     * any subsequent elements to the right (adds one to their indices).
-     *
-     * @param index index at which the specified element is to be inserted
-     * @param element element to be inserted
+     * 在指定的位置插入指定的元素列表。移动当前位于该位置的元素（如果有），并且
+     *右边的任何后续元素（在其索引中添加一个）。
+     * @param index 要插入指定元素的索引
+     * @param element 要插入的元素
      * @throws IndexOutOfBoundsException {@inheritDoc}
      */
     public void add(int index, E element) {
         rangeCheckForAdd(index);
+        //判断是否需要扩容
+        ensureCapacityInternal(size + 1);
 
-        ensureCapacityInternal(size + 1);  // Increments modCount!!
+        //原数组，原数组要复制的开始索引，目标数组，目标数组放置的开始索引，要拷贝数组的长度
         System.arraycopy(elementData, index, elementData, index + 1,
                          size - index);
         elementData[index] = element;
@@ -566,11 +555,13 @@ public class ArrayList<E> extends AbstractList<E>
         //要移动的长度
         int numMoved = size - index - 1;
         if (numMoved > 0)
-            //将指定位置index+1往后的元素都向前移动一位，覆盖需要删除的元素
-            System.arraycopy(elementData, index+1, elementData, index,
+            //将指定位置index+1往后的元素都向前移动一位，
+            // 覆盖需要删除的元素
+        System.arraycopy(elementData,
+                index+1, elementData, index,
                              numMoved);
         // 将最后一个元素置空
-        elementData[--size] = null; // clear to let GC do its work
+        elementData[--size] = null;
 
         //返回删除的元素
         return oldValue;
@@ -591,7 +582,8 @@ public class ArrayList<E> extends AbstractList<E>
      */
     public boolean remove(Object o) {
         if (o == null) {
-            //如果o=null 则查询集合中是否存在null元素，找到索引然后删除
+            //如果o=null 则查询集合中是否存在null元素，
+            // 找到索引然后删除
             for (int index = 0; index < size; index++)
                 if (elementData[index] == null) {
                     //null需要单独判断，否则会抛空指针异常

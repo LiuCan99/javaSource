@@ -4,6 +4,7 @@ import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 
 public class ArrayListTest {
 
@@ -36,6 +37,22 @@ public class ArrayListTest {
         ArrayList<Integer> arrlist = new ArrayList<>();
         arrlist.add(35);
     }
+
+    /**
+     * 在指定位置插入元素
+     */
+    @Test
+    public void add2(){
+        ArrayList<Integer> arrlist = new ArrayList<>();
+        arrlist.add(1);
+        arrlist.add(2);
+        arrlist.add(3);
+
+        arrlist.add(1,6);
+    }
+
+
+
 
     /**
      * get:获得指定索引的元素

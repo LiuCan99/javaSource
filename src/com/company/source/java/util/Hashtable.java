@@ -391,7 +391,7 @@ public class Hashtable<K,V>
         int oldCapacity = table.length;
         Entry<?,?>[] oldMap = table;
 
-        // overflow-conscious code
+        // 计算扩容的容量
         int newCapacity = (oldCapacity << 1) + 1;
         if (newCapacity - MAX_ARRAY_SIZE > 0) {
             if (oldCapacity == MAX_ARRAY_SIZE)
@@ -422,7 +422,7 @@ public class Hashtable<K,V>
 
         Entry<?,?> tab[] = table;
         if (count >= threshold) {
-            // Rehash the table if the threshold is exceeded
+            // 如果超过阈值，则扩容
             rehash();
 
             tab = table;
@@ -455,14 +455,21 @@ public class Hashtable<K,V>
      * @see     #get(Object)
      */
     public synchronized V put(K key, V value) {
-        // Make sure the value is not null
+        // 确保该值不为null
         if (value == null) {
             throw new NullPointerException();
         }
 
-        // Makes sure the key is not already in the hashtable.
+        /**
+         * 确保key在table[]是不重复的
+         * 处理过程：
+         * 1、计算key的hash值，确认在table[]中的索引位置
+         * 2、迭代index索引位置，如果该位置处的链表中存在一个一样的key，则替换其value，返回旧值
+         */
         Entry<?,?> tab[] = table;
+        //计算key的hash值
         int hash = key.hashCode();
+        //确认该key的索引位置
         int index = (hash & 0x7FFFFFFF) % tab.length;
         @SuppressWarnings("unchecked")
         Entry<K,V> entry = (Entry<K,V>)tab[index];

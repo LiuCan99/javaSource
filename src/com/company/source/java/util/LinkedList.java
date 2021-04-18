@@ -148,7 +148,8 @@ public class LinkedList<E>
     void linkLast(E e) {
         //因为我们需要把该元素设置为尾节点，所以需要新建一个变量把尾节点存储起来。
         final Node<E> l = last;
-        //然后新建一个节点，把last指向l，然后自身设置为尾结点。(指向当前节点的前一个节点的指针,节点的值,当前节点的后一个节点的指针)
+        //然后新建一个节点，把last指向l，然后自身设置为尾结点。
+        // (指向当前节点的前一个节点的指针,节点的值,当前节点的后一个节点的指针)
         final Node<E> newNode = new Node<>(l, e, null);
         last = newNode;
         //再判断一下l是否为空，如果为空的话，说明原来的LinkedList为空。
@@ -158,7 +159,6 @@ public class LinkedList<E>
         else
             //否则就把l的next设置为newNode
             l.next = newNode;
-
         //size和modCount自增。
         size++;
         modCount++;
@@ -166,15 +166,21 @@ public class LinkedList<E>
 
     /**
      * Inserts element e before non-null Node succ.
+     * e：需要插入的元素
+     * 指定索引的节点
      */
     void linkBefore(E e, Node<E> succ) {
-        // assert succ != null;
+        //前一节点指针
         final Node<E> pred = succ.prev;
+        //一个新的节点（前一节点的信息，插入元素，索引节点）
         final Node<E> newNode = new Node<>(pred, e, succ);
+        //设置下一节点的prev指针信息
         succ.prev = newNode;
+        //判断是否是头节点
         if (pred == null)
             first = newNode;
         else
+            //设置上一节点的next指针信息
             pred.next = newNode;
         size++;
         modCount++;
@@ -231,7 +237,8 @@ public class LinkedList<E>
         final Node<E> prev = x.prev;
 
         if (prev == null) {
-            //待删除节点的前一个节点是否为空，如果为空的话，表明待删除的节点是我们的头结点。则需要把待删除节点的后一个节点设置为头结点
+            //待删除节点的前一个节点是否为空，如果为空的话，
+            // 表明待删除的节点是头结点。则需要把待删除节点的后一个节点设置为头结点
             first = next;
         } else {
             //如果不为空，就需要把待删除的节点的前、后节点链接起来
@@ -240,9 +247,9 @@ public class LinkedList<E>
             //删除节点的上一个节点=null
             x.prev = null;
         }
-
         if (next == null) {
-            //接着判断一下待删除的节点是否为空，如果为空的话，则表明待删除节点是尾节点，所以需要我们把待删除节点的前一个节点设置为尾节点
+            //接着判断一下待删除的节点是否为空，如果为空的话，
+            // 则表明待删除节点是尾节点，所以需要我们把待删除节点的前一个节点设置为尾节点
             last = prev;
         } else {
             ///待删除节点的后一个节点的前一个节点=待删除节点的前一个节点
@@ -250,10 +257,8 @@ public class LinkedList<E>
             //删除节点的下一个节点=null
             x.next = null;
         }
-
         //待删除元素=null
         x.item = null;
-
         //更新集合长度、集合修改次数
         size--;
         modCount++;
@@ -630,7 +635,8 @@ public class LinkedList<E>
 
     /**
      *计算指定索引上的节点（返回Node）
-     * LinkedList还对整个做了优化，不是盲目地直接从头进行遍历，而是先比较一下index更靠近链表（LinkedList）的头节点还是尾节点。
+     * LinkedList还对整个做了优化，不是盲目地直接从头进行遍历，
+     * 而是先比较一下index更靠近链表（LinkedList）的头节点还是尾节点。
      * 然后进行遍历，获取相应的节点。
      */
     Node<E> node(int index) {

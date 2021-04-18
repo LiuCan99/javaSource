@@ -49,6 +49,8 @@ public class LinkedListTest {
         LinkedList<Integer> linkedList=new LinkedList<>();
         linkedList.add(1);
         linkedList.offer(2);
+
+        linkedList.add(1,8);
     }
 
     /**
@@ -65,7 +67,6 @@ public class LinkedListTest {
 
         String s = linkedList.get(1);
     }
-
     /**
      * remove：删除指定索引元素
      * 1.遍历获得该索引位置的节点元素

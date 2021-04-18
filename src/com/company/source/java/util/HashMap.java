@@ -264,10 +264,8 @@ public class HashMap<K,V> extends AbstractMap<K,V>
     static final int TREEIFY_THRESHOLD = 8;
 
     /**
+     * 退化为链表的临界值
      * 当某个桶节点数量小于6时，会转换为链表，前提是它当前是红黑树结构
-     * The bin count threshold for untreeifying a (split) bin during a
-     * resize operation. Should be less than TREEIFY_THRESHOLD, and at
-     * most 6 to mesh with shrinkage detection under removal.
      */
     static final int UNTREEIFY_THRESHOLD = 6;
 
@@ -717,6 +715,7 @@ public class HashMap<K,V> extends AbstractMap<K,V>
 
                         //判断是否要转换为红黑树结构
                         if (binCount >= TREEIFY_THRESHOLD - 1) // -1 for 1st
+                            //转化为红黑树逻辑
                             treeifyBin(tab, hash);
                         break;
                     }
@@ -884,9 +883,12 @@ public class HashMap<K,V> extends AbstractMap<K,V>
      */
     final void treeifyBin(Node<K,V>[] tab, int hash) {
         int n, index; Node<K,V> e;
+        //首先tab的长度是否小于64,
         if (tab == null || (n = tab.length) < MIN_TREEIFY_CAPACITY)
+            //小于64则进行扩容
             resize();
         else if ((e = tab[index = (n - 1) & hash]) != null) {
+            //否则才将列表转换为红黑树
             TreeNode<K,V> hd = null, tl = null;
             do {
                 TreeNode<K,V> p = replacementTreeNode(e, null);
@@ -2180,14 +2182,14 @@ public class HashMap<K,V> extends AbstractMap<K,V>
         }
 
         /**
-         * Removes the given node, that must be present before this call.
-         * This is messier than typical red-black deletion code because we
-         * cannot swap the contents of an interior node with a leaf
-         * successor that is pinned by "next" pointers that are accessible
-         * independently during traversal. So instead we swap the tree
-         * linkages. If the current tree appears to have too few nodes,
-         * the bin is converted back to a plain bin. (The test triggers
-         * somewhere between 2 and 6 nodes, depending on tree structure).
+         *删除此调用之前必须存在的给定节点。
+         *这比典型的红黑删除代码更混乱，因为我们
+         *无法将内部节点的内容与叶交换
+         *由可访问的“下一个”指针固定的后续对象
+         *在遍历过程中独立运行。所以我们把树换了
+         *联系。如果当前树的节点太少，
+         *箱子被转换回普通箱子。（测试触发
+         *在2到6个节点之间，具体取决于树结构）
          */
         final void removeTreeNode(HashMap<K,V> map, Node<K,V>[] tab,
                                   boolean movable) {
@@ -2207,6 +2209,12 @@ public class HashMap<K,V> extends AbstractMap<K,V>
                 return;
             if (root.parent != null)
                 root = root.root();
+
+            /**
+             * 判断是否解除红黑树结构
+             * 如果红黑树根root为空，或者root的左子树/右子树为空，root.left.left根的左子树的左子树为空
+             * 这几种情况都会发生红黑树退化成链表
+             */
             if (root == null
                 || (movable
                     && (root.right == null
