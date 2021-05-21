@@ -1,10 +1,9 @@
 package com.company.test.list;
 
+import com.company.test.User;
 import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
 
 public class ArrayListTest {
 
@@ -28,34 +27,10 @@ public class ArrayListTest {
         ArrayList<Object> list2=new ArrayList<>(20);
     }
 
-    /**
-     * add:添加元素，直接添加到数组的末尾
-     * 添加之前需要判断该集合是否需要扩容
-     */
-    @Test
-    public void add(){
-        ArrayList<Integer> arrlist = new ArrayList<>();
-        arrlist.add(35);
-    }
-
-    /**
-     * 在指定位置插入元素
-     */
-    @Test
-    public void add2(){
-        ArrayList<Integer> arrlist = new ArrayList<>();
-        arrlist.add(1);
-        arrlist.add(2);
-        arrlist.add(3);
-
-        arrlist.add(1,6);
-    }
-
-
-
 
     /**
      * get:获得指定索引的元素
+     * 	根据索引寻找公式：a[i]_address = base_address + i*data_type_size
      */
     @Test
     public void get(){
@@ -65,6 +40,16 @@ public class ArrayListTest {
         arrlist.add(25);
 
         Integer integer = arrlist.get(1);
+    }
+
+    /**
+     * add:添加元素，直接添加到数组的末尾
+     * 添加之前需要判断该集合是否需要扩容
+     */
+    @Test
+    public void add(){
+        ArrayList<Integer> arrlist = new ArrayList<>();
+        arrlist.add(35);
     }
 
     /**
@@ -79,6 +64,20 @@ public class ArrayListTest {
 
         //将arrList集合的第0个索引位置的元素值替换为2
         Integer set = arrlist.set(0, 2); //返回原元素值：35
+    }
+
+
+    /**
+     * 在指定位置插入元素
+     */
+    @Test
+    public void add2(){
+        ArrayList<Integer> arrlist = new ArrayList<>();
+        arrlist.add(1);
+        arrlist.add(2);
+        arrlist.add(3);
+
+        arrlist.add(1,6);
     }
 
     /**
@@ -120,6 +119,7 @@ public class ArrayListTest {
 
 //        arrlist.removeIf(null);  抛空指针异常
         arrlist.removeIf(user->user.getAge()>20);
+        arrlist.stream().filter(u->u.getAge()>0);
         System.out.println(arrlist);
     }
 
@@ -234,6 +234,7 @@ public class ArrayListTest {
         arrlist.add(35);
         arrlist.add(20);
         arrlist.add(25);
+        Collections.sort(arrlist);
 
         ArrayList<Integer> arrlist2 = new ArrayList<>();
 

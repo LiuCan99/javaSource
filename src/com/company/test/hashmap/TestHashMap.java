@@ -24,6 +24,31 @@ public class TestHashMap {
         HashMap<String,Integer> map3=new HashMap<>(20,1);
     }
 
+
+    /**
+     * get:获得指定key的value
+     * 1.如果是头结点，则直接返回头结点
+     * 2.是红黑树结构,红黑树中找，然后返回
+     * 3.链表节点，一样遍历链表，找到该节点并返回
+     */
+    @Test
+    public void get(){
+        HashMap<String,Integer> map=new HashMap<>();
+        map.put("jack",18);
+        map.put("rose",19);
+        map.put("张三",null);
+        map.put(null,1);
+
+        Integer jack = map.get("jack");
+
+        //todo  获得到的null无法确实是该key对应的value=null  还是不存在该key
+        Integer a = map.get("张三");
+        Integer b = map.get("张三44");
+
+        boolean c = map.containsKey("张三44");
+    }
+
+
     /**
      * put:添加元素 （key，value）
      * 当再次添加的元素key相同时，之前的会被覆盖
@@ -54,6 +79,9 @@ public class TestHashMap {
          * 扩容操作时，会new一个新的Node数组作为哈希桶，然后将原哈希表中的所有数据(Node节点)移动到新的哈希桶中，相当于对原哈希表中所有的数据重新做了一个put操作。
          * 所以性能消耗很大，可想而知，在哈希表的容量越大时，性能消耗越明显。
          */
+
+        //todo 而key的hash值，并不仅仅只是key对象的hashCode()方法的返回值，还会经过扰动函数的扰动，以使hash值更加均衡。
+        //todo 因为hashCode()是int类型，取值范围是40多亿，只要哈希函数映射的比较均匀松散，碰撞几率是很小的。
         map.put("jack",18);
     }
 
@@ -79,21 +107,6 @@ public class TestHashMap {
         map.put("rose",19);
 
         map.remove("jack");
-    }
-
-    /**
-     * get:获得指定key的value
-     * 1.如果是头结点，则直接返回头结点
-     * 2.是红黑树结构,红黑树中找，然后返回
-     * 3.链表节点，一样遍历链表，找到该节点并返回
-     */
-    @Test
-    public void get(){
-        HashMap<String,Integer> map=new HashMap<>();
-        map.put("jack",18);
-        map.put("rose",19);
-
-        Integer jack = map.get("jack");
     }
 
     /**

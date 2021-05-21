@@ -1,11 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="24e7a4d3-e1cf-47e8-a7dc-71ab5a2a9ead" name="Default Changelist" comment="LinkedList源码学习">
+    <list default="true" id="24e7a4d3-e1cf-47e8-a7dc-71ab5a2a9ead" name="Default Changelist" comment="HashMap源码学习">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/company/test/hashmap/CarefulMap.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/company/test/list/CarefulList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/company/test/set/HashSetTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JavaSource/com/company/test/hashmap/TestHashMap.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaSource/com/company/test/hashmap/TestHashMap.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JavaSource/java/util/AbstractList$Itr.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaSource/java/util/AbstractList$Itr.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JavaSource/java/util/AbstractList$ListItr.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaSource/java/util/AbstractList$ListItr.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JavaSource/java/util/AbstractList.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaSource/java/util/AbstractList.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JavaSource/java/util/ArrayList$ArrayListSpliterator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaSource/java/util/ArrayList$ArrayListSpliterator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JavaSource/java/util/ArrayList$Itr.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaSource/java/util/ArrayList$Itr.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JavaSource/java/util/ArrayList$ListItr.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaSource/java/util/ArrayList$ListItr.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JavaSource/java/util/ArrayList$SubList$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaSource/java/util/ArrayList$SubList$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JavaSource/java/util/ArrayList$SubList.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaSource/java/util/ArrayList$SubList.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JavaSource/java/util/ArrayList.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaSource/java/util/ArrayList.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JavaSource/java/util/Arrays$ArrayList.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaSource/java/util/Arrays$ArrayList.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JavaSource/java/util/Arrays.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaSource/java/util/Arrays.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JavaSource/java/util/HashMap$EntryIterator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaSource/java/util/HashMap$EntryIterator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JavaSource/java/util/HashMap$EntrySet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaSource/java/util/HashMap$EntrySet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JavaSource/java/util/HashMap$EntrySpliterator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaSource/java/util/HashMap$EntrySpliterator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JavaSource/java/util/HashMap$HashIterator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaSource/java/util/HashMap$HashIterator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JavaSource/java/util/HashMap$HashMapSpliterator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaSource/java/util/HashMap$HashMapSpliterator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JavaSource/java/util/HashMap$KeyIterator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaSource/java/util/HashMap$KeyIterator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JavaSource/java/util/HashMap$KeySet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaSource/java/util/HashMap$KeySet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JavaSource/java/util/HashMap$KeySpliterator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaSource/java/util/HashMap$KeySpliterator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JavaSource/java/util/HashMap$Node.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaSource/java/util/HashMap$Node.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JavaSource/java/util/HashMap$TreeNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaSource/java/util/HashMap$TreeNode.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JavaSource/java/util/HashMap$ValueIterator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaSource/java/util/HashMap$ValueIterator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JavaSource/java/util/HashMap$ValueSpliterator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaSource/java/util/HashMap$ValueSpliterator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JavaSource/java/util/HashMap$Values.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaSource/java/util/HashMap$Values.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JavaSource/java/util/HashMap.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaSource/java/util/HashMap.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JavaSource/java/util/HashSet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaSource/java/util/HashSet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JavaSource/java/util/Hashtable$Entry.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaSource/java/util/Hashtable$Entry.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JavaSource/java/util/Hashtable$EntrySet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaSource/java/util/Hashtable$EntrySet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JavaSource/java/util/Hashtable$Enumerator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaSource/java/util/Hashtable$Enumerator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JavaSource/java/util/Hashtable$KeySet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaSource/java/util/Hashtable$KeySet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JavaSource/java/util/Hashtable$ValueCollection.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaSource/java/util/Hashtable$ValueCollection.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JavaSource/java/util/Hashtable.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaSource/java/util/Hashtable.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JavaSource/java/util/LinkedList$DescendingIterator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaSource/java/util/LinkedList$DescendingIterator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JavaSource/java/util/LinkedList$LLSpliterator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaSource/java/util/LinkedList$LLSpliterator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JavaSource/java/util/LinkedList$ListItr.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaSource/java/util/LinkedList$ListItr.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JavaSource/java/util/LinkedList$Node.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaSource/java/util/LinkedList$Node.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JavaSource/java/util/LinkedList.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaSource/java/util/LinkedList.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JavaSource/java/util/RandomAccessSubList.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaSource/java/util/RandomAccessSubList.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JavaSource/java/util/SubList$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaSource/java/util/SubList$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JavaSource/java/util/SubList.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaSource/java/util/SubList.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/source/java/util/AbstractList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/source/java/util/AbstractList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/source/java/util/ArrayList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/source/java/util/ArrayList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/source/java/util/Arrays.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/source/java/util/Arrays.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/source/java/util/HashMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/source/java/util/HashMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/source/java/util/HashSet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/source/java/util/HashSet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/source/java/util/LinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/source/java/util/LinkedList.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/test/hashmap/TestHashMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/test/hashmap/TestHashMap.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/test/list/ArrayListTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/test/list/ArrayListTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/test/list/LinkedListTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/test/list/LinkedListTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/test/list/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/test/User.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,28 +98,42 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../AIBOT" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15332031" />
     <property name="project.structure.side.proportion" value="0.13394919" />
-    <property name="settings.editor.selected.configurable" value="JavaScript.Libraries" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
-  <component name="RunManager" selected="JUnit.LinkedListTest.contains">
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.CarefulList.asList">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ArrayListTest.forEach" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ArrayListTest.delete" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="JavaSource" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.company.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.company.test.list" />
+      <option name="MAIN_CLASS_NAME" value="com.company.test.list.ArrayListTest" />
+      <option name="METHOD_NAME" value="delete" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ArrayListTest.remove" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="JavaSource" />
       <extension name="coverage">
         <pattern>
@@ -77,71 +143,55 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.company.test.list" />
       <option name="MAIN_CLASS_NAME" value="com.company.test.list.ArrayListTest" />
-      <option name="METHOD_NAME" value="forEach" />
+      <option name="METHOD_NAME" value="remove" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ArrayListTest.removeIf" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CarefulList.asList" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="JavaSource" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.company.test.list.*" />
+          <option name="PATTERN" value="com.company.test.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.company.test.list" />
-      <option name="MAIN_CLASS_NAME" value="com.company.test.list.ArrayListTest" />
-      <option name="METHOD_NAME" value="removeIf" />
+      <option name="MAIN_CLASS_NAME" value="com.company.test.list.CarefulList" />
+      <option name="METHOD_NAME" value="asList" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LinkedListTest.add3" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CarefulMap.aboutKey" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="JavaSource" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.company.test.list.*" />
+          <option name="PATTERN" value="com.company.test.hashmap.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.company.test.list" />
-      <option name="MAIN_CLASS_NAME" value="com.company.test.list.LinkedListTest" />
-      <option name="METHOD_NAME" value="add3" />
+      <option name="PACKAGE_NAME" value="com.company.test.hashmap" />
+      <option name="MAIN_CLASS_NAME" value="com.company.test.hashmap.CarefulMap" />
+      <option name="METHOD_NAME" value="aboutKey" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LinkedListTest.contains" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestHashMap.get" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="JavaSource" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.company.test.list.*" />
+          <option name="PATTERN" value="com.company.test.hashmap.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.company.test.list" />
-      <option name="MAIN_CLASS_NAME" value="com.company.test.list.LinkedListTest" />
-      <option name="METHOD_NAME" value="contains" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="LinkedListTest.initLinkedList" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="JavaSource" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.company.test.list.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.company.test.list" />
-      <option name="MAIN_CLASS_NAME" value="com.company.test.list.LinkedListTest" />
-      <option name="METHOD_NAME" value="initLinkedList" />
+      <option name="PACKAGE_NAME" value="com.company.test.hashmap" />
+      <option name="MAIN_CLASS_NAME" value="com.company.test.hashmap.TestHashMap" />
+      <option name="METHOD_NAME" value="get" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -212,11 +262,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.LinkedListTest.contains" />
-        <item itemvalue="JUnit.LinkedListTest.add3" />
-        <item itemvalue="JUnit.LinkedListTest.initLinkedList" />
-        <item itemvalue="JUnit.ArrayListTest.forEach" />
-        <item itemvalue="JUnit.ArrayListTest.removeIf" />
+        <item itemvalue="JUnit.CarefulList.asList" />
+        <item itemvalue="JUnit.TestHashMap.get" />
+        <item itemvalue="JUnit.ArrayListTest.remove" />
+        <item itemvalue="JUnit.CarefulMap.aboutKey" />
+        <item itemvalue="JUnit.ArrayListTest.delete" />
       </list>
     </recent_temporary>
   </component>
@@ -242,7 +292,19 @@
       <workItem from="1617180995755" duration="5731000" />
       <workItem from="1617240861127" duration="6593000" />
       <workItem from="1617259787402" duration="28503000" />
-      <workItem from="1617672296404" duration="19957000" />
+      <workItem from="1617672296404" duration="23567000" />
+      <workItem from="1618192154657" duration="1867000" />
+      <workItem from="1618224648071" duration="171000" />
+      <workItem from="1618479450138" duration="926000" />
+      <workItem from="1618800994193" duration="3602000" />
+      <workItem from="1618973479759" duration="3110000" />
+      <workItem from="1619096140262" duration="929000" />
+      <workItem from="1619510883072" duration="791000" />
+      <workItem from="1620371491490" duration="1283000" />
+      <workItem from="1621251439820" duration="2696000" />
+      <workItem from="1621300268635" duration="30362000" />
+      <workItem from="1621581961860" duration="2208000" />
+      <workItem from="1621584238221" duration="7580000" />
     </task>
     <task id="LOCAL-00001" summary="String字符串源码学习">
       <created>1616752389889</created>
@@ -300,7 +362,14 @@
       <option name="project" value="LOCAL" />
       <updated>1617679101181</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="HashMap源码学习">
+      <created>1617704791547</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1617704791547</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -326,7 +395,8 @@
     <MESSAGE value="算法：插入排序&#10;List源码学习" />
     <MESSAGE value="List源码学习" />
     <MESSAGE value="LinkedList源码学习" />
-    <option name="LAST_COMMIT_MESSAGE" value="LinkedList源码学习" />
+    <MESSAGE value="HashMap源码学习" />
+    <option name="LAST_COMMIT_MESSAGE" value="HashMap源码学习" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -413,53 +483,73 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/com/company/test/list/ArrayListTest.java</url>
-          <line>23</line>
-          <option name="timeStamp" value="50" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/company/test/list/ArrayListTest.java</url>
-          <line>129</line>
+          <line>146</line>
           <option name="timeStamp" value="51" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/com/company/source/java/util/ArrayList.java</url>
-          <line>217</line>
+          <line>125</line>
           <option name="timeStamp" value="52" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/com/company/source/java/util/ArrayList.java</url>
-          <line>196</line>
+          <line>108</line>
           <option name="timeStamp" value="53" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/com/company/test/list/ArrayListTest.java</url>
-          <line>58</line>
+          <line>60</line>
           <option name="timeStamp" value="74" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/com/company/test/list/ArrayListTest.java</url>
-          <line>179</line>
+          <line>196</line>
           <option name="timeStamp" value="79" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/com/company/test/list/ArrayListTest.java</url>
-          <line>232</line>
+          <line>250</line>
           <option name="timeStamp" value="80" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/com/company/source/java/util/ArrayList.java</url>
-          <line>303</line>
+          <line>204</line>
           <option name="timeStamp" value="101" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/com/company/test/list/ArrayListTest.java</url>
-          <line>217</line>
+          <line>234</line>
           <option name="timeStamp" value="106" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/com/company/source/java/util/ArrayList.java</url>
-          <line>523</line>
+          <line>423</line>
           <option name="timeStamp" value="110" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/company/source/java/util/HashSet.java</url>
+          <line>221</line>
+          <option name="timeStamp" value="119" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/company/source/java/util/HashMap.java</url>
+          <line>926</line>
+          <option name="timeStamp" value="122" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/company/test/list/ArrayListTest.java</url>
+          <line>24</line>
+          <option name="timeStamp" value="140" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/company/test/list/CarefulList.java</url>
+          <line>50</line>
+          <option name="timeStamp" value="151" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/company/test/hashmap/TestHashMap.java</url>
+          <line>39</line>
+          <option name="timeStamp" value="153" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -37,92 +37,42 @@ import java.util.function.Function;
 import sun.misc.SharedSecrets;
 
 /**
- * Hash table based implementation of the <tt>Map</tt> interface.  This
- * implementation provides all of the optional map operations, and permits
- * <tt>null</tt> values and the <tt>null</tt> key.  (The <tt>HashMap</tt>
- * class is roughly equivalent to <tt>Hashtable</tt>, except that it is
- * unsynchronized and permits nulls.)  This class makes no guarantees as to
- * the order of the map; in particular, it does not guarantee that the order
- * will remain constant over time.
+ *基于哈希表的<tt>Map</tt>接口实现。这个
+ * 实现提供了所有可选的map操作和许可证
+ * <tt>null</tt>值和<tt>null</tt>键(哈希图
+ * 类大致相当于<tt>Hashtable</tt>，只是
+ * 这个类不保证
+ * 地图的顺序；特别是，它不能保证
+ * 将随时间保持不变。
  *
- * <p>This implementation provides constant-time performance for the basic
- * operations (<tt>get</tt> and <tt>put</tt>), assuming the hash function
- * disperses the elements properly among the buckets.  Iteration over
- * collection views requires time proportional to the "capacity" of the
- * <tt>HashMap</tt> instance (the number of buckets) plus its size (the number
- * of key-value mappings).  Thus, it's very important not to set the initial
- * capacity too high (or the load factor too low) if iteration performance is
- * important.
+ * <p>此实现为基本实现提供了恒定的时间性能
+ * 假设哈希函数，操作（<tt>get</tt>和<tt>put</tt>）
+ * 将元素适当分散在桶中。迭代
+ * 集合视图需要与“容量”成比例的时间
+ * <tt>HashMap</tt>实例（桶数）及其大小（数字
+ * 键值映射的）。因此，不设置初始值非常重要
+ * 如果迭代性能过高（或负载系数过低）
+ * 重要。
  *
- * <p>An instance of <tt>HashMap</tt> has two parameters that affect its
- * performance: <i>initial capacity</i> and <i>load factor</i>.  The
- * <i>capacity</i> is the number of buckets in the hash table, and the initial
- * capacity is simply the capacity at the time the hash table is created.  The
- * <i>load factor</i> is a measure of how full the hash table is allowed to
- * get before its capacity is automatically increased.  When the number of
- * entries in the hash table exceeds the product of the load factor and the
- * current capacity, the hash table is <i>rehashed</i> (that is, internal data
- * structures are rebuilt) so that the hash table has approximately twice the
- * number of buckets.
+ *<p><tt>HashMap</tt>的实例有两个参数影响其
+ *性能：<i>initial capacity</i>和<i>load factor</i>。这个
+ * <i>capacity</i>是哈希表中的存储桶数，以及容量只是创建哈希表时的容量。
+ * 这个<i>load factor</i>是允许哈希表的填充程度的度量
+ * 在其容量自动增加之前获取。当哈希表中的条目超过了加载因子和当前容量时，
+ * 哈希表被重新格式化（即内部数据结构）以便哈希表具有大约两倍的铲斗数量。
  *
- * <p>As a general rule, the default load factor (.75) offers a good
- * tradeoff between time and space costs.  Higher values decrease the
- * space overhead but increase the lookup cost (reflected in most of
- * the operations of the <tt>HashMap</tt> class, including
- * <tt>get</tt> and <tt>put</tt>).  The expected number of entries in
- * the map and its load factor should be taken into account when
- * setting its initial capacity, so as to minimize the number of
- * rehash operations.  If the initial capacity is greater than the
- * maximum number of entries divided by the load factor, no rehash
- * operations will ever occur.
+ * <p>作为一般规则，默认负载系数（.75）提供了良好的性能
+ * 时间和空间成本之间的权衡。较高的值会降低空间开销，但会增加查找成本（反映在大多数类的操作，包括<tt>get</tt>和<tt>put</tt>）。
+ * 中的预期条目数在安装时应考虑地图及其荷载系数设置其初始容量，
+ * 以尽量减少再冲洗操作。如果初始容量大于最大条目数除以负荷系数，无需再灰分行动永远不会发生。
  *
- * <p>If many mappings are to be stored in a <tt>HashMap</tt>
- * instance, creating it with a sufficiently large capacity will allow
- * the mappings to be stored more efficiently than letting it perform
- * automatic rehashing as needed to grow the table.  Note that using
- * many keys with the same {@code hashCode()} is a sure way to slow
- * down performance of any hash table. To ameliorate impact, when keys
- * are {@link Comparable}, this class may use comparison order among
- * keys to help break ties.
- *
- * <p><strong>Note that this implementation is not synchronized.</strong>
- * If multiple threads access a hash map concurrently, and at least one of
- * the threads modifies the map structurally, it <i>must</i> be
- * synchronized externally.  (A structural modification is any operation
- * that adds or deletes one or more mappings; merely changing the value
- * associated with a key that an instance already contains is not a
- * structural modification.)  This is typically accomplished by
- * synchronizing on some object that naturally encapsulates the map.
- *
- * If no such object exists, the map should be "wrapped" using the
- * {@link Collections#synchronizedMap Collections.synchronizedMap}
- * method.  This is best done at creation time, to prevent accidental
- * unsynchronized access to the map:<pre>
- *   Map m = Collections.synchronizedMap(new HashMap(...));</pre>
- *
- * <p>The iterators returned by all of this class's "collection view methods"
- * are <i>fail-fast</i>: if the map is structurally modified at any time after
- * the iterator is created, in any way except through the iterator's own
- * <tt>remove</tt> method, the iterator will throw a
- * {@link ConcurrentModificationException}.  Thus, in the face of concurrent
- * modification, the iterator fails quickly and cleanly, rather than risking
- * arbitrary, non-deterministic behavior at an undetermined time in the
- * future.
- *
- * <p>Note that the fail-fast behavior of an iterator cannot be guaranteed
- * as it is, generally speaking, impossible to make any hard guarantees in the
- * presence of unsynchronized concurrent modification.  Fail-fast iterators
- * throw <tt>ConcurrentModificationException</tt> on a best-effort basis.
- * Therefore, it would be wrong to write a program that depended on this
- * exception for its correctness: <i>the fail-fast behavior of iterators
- * should be used only to detect bugs.</i>
- *
- * <p>This class is a member of the
- * <a href="{@docRoot}/../technotes/guides/collections/index.html">
- * Java Collections Framework</a>.
- *
- * @param <K> the type of keys maintained by this map
- * @param <V> the type of mapped values
+ * <p>如果要在HashMap中存储许多映射
+ * 例如，使用足够大的容量创建它将允许
+ * 存储映射要比让它执行更有效
+ * 根据需要自动重新灰化以增大桌子。注意，使用
+ * 许多具有相同{@code hashCode（）}的键肯定会减慢速度
+ * 降低任何哈希表的性能。当钥匙
+ * 如果{@link Comparable}，这个类可以使用帮助打破关系的钥匙。
  *
  * @author  Doug Lea
  * @author  Josh Bloch
@@ -139,96 +89,6 @@ public class HashMap<K,V> extends AbstractMap<K,V>
     implements Map<K,V>, Cloneable, Serializable {
 
     private static final long serialVersionUID = 362498820763181265L;
-
-    /*
-     * Implementation notes.
-     *
-     * This map usually acts as a binned (bucketed) hash table, but
-     * when bins get too large, they are transformed into bins of
-     * TreeNodes, each structured similarly to those in
-     * java.util.TreeMap. Most methods try to use normal bins, but
-     * relay to TreeNode methods when applicable (simply by checking
-     * instanceof a node).  Bins of TreeNodes may be traversed and
-     * used like any others, but additionally support faster lookup
-     * when overpopulated. However, since the vast majority of bins in
-     * normal use are not overpopulated, checking for existence of
-     * tree bins may be delayed in the course of table methods.
-     *
-     * Tree bins (i.e., bins whose elements are all TreeNodes) are
-     * ordered primarily by hashCode, but in the case of ties, if two
-     * elements are of the same "class C implements Comparable<C>",
-     * type then their compareTo method is used for ordering. (We
-     * conservatively check generic types via reflection to validate
-     * this -- see method comparableClassFor).  The added complexity
-     * of tree bins is worthwhile in providing worst-case O(log n)
-     * operations when keys either have distinct hashes or are
-     * orderable, Thus, performance degrades gracefully under
-     * accidental or malicious usages in which hashCode() methods
-     * return values that are poorly distributed, as well as those in
-     * which many keys share a hashCode, so long as they are also
-     * Comparable. (If neither of these apply, we may waste about a
-     * factor of two in time and space compared to taking no
-     * precautions. But the only known cases stem from poor user
-     * programming practices that are already so slow that this makes
-     * little difference.)
-     *
-     * Because TreeNodes are about twice the size of regular nodes, we
-     * use them only when bins contain enough nodes to warrant use
-     * (see TREEIFY_THRESHOLD). And when they become too small (due to
-     * removal or resizing) they are converted back to plain bins.  In
-     * usages with well-distributed user hashCodes, tree bins are
-     * rarely used.  Ideally, under random hashCodes, the frequency of
-     * nodes in bins follows a Poisson distribution
-     * (http://en.wikipedia.org/wiki/Poisson_distribution) with a
-     * parameter of about 0.5 on average for the default resizing
-     * threshold of 0.75, although with a large variance because of
-     * resizing granularity. Ignoring variance, the expected
-     * occurrences of list size k are (exp(-0.5) * pow(0.5, k) /
-     * factorial(k)). The first values are:
-     *
-     * 0:    0.60653066
-     * 1:    0.30326533
-     * 2:    0.07581633
-     * 3:    0.01263606
-     * 4:    0.00157952
-     * 5:    0.00015795
-     * 6:    0.00001316
-     * 7:    0.00000094
-     * 8:    0.00000006
-     * more: less than 1 in ten million
-     *
-     * The root of a tree bin is normally its first node.  However,
-     * sometimes (currently only upon Iterator.remove), the root might
-     * be elsewhere, but can be recovered following parent links
-     * (method TreeNode.root()).
-     *
-     * All applicable internal methods accept a hash code as an
-     * argument (as normally supplied from a public method), allowing
-     * them to call each other without recomputing user hashCodes.
-     * Most internal methods also accept a "tab" argument, that is
-     * normally the current table, but may be a new or old one when
-     * resizing or converting.
-     *
-     * When bin lists are treeified, split, or untreeified, we keep
-     * them in the same relative access/traversal order (i.e., field
-     * Node.next) to better preserve locality, and to slightly
-     * simplify handling of splits and traversals that invoke
-     * iterator.remove. When using comparators on insertion, to keep a
-     * total ordering (or as close as is required here) across
-     * rebalancings, we compare classes and identityHashCodes as
-     * tie-breakers.
-     *
-     * The use and transitions among plain vs tree modes is
-     * complicated by the existence of subclass LinkedHashMap. See
-     * below for hook methods defined to be invoked upon insertion,
-     * removal and access that allow LinkedHashMap internals to
-     * otherwise remain independent of these mechanics. (This also
-     * requires that a map instance be passed to some utility methods
-     * that may create new nodes.)
-     *
-     * The concurrent-programming-like SSA-based coding style helps
-     * avoid aliasing errors amid all of the twisty pointer operations.
-     */
 
     /**
      * 默认容量，1向左移位4个，
@@ -254,12 +114,6 @@ public class HashMap<K,V> extends AbstractMap<K,V>
 
     /**
      * 当某个桶节点数量大于8时，会转换为红黑树
-     * The bin count threshold for using a tree rather than list for a
-     * bin.  Bins are converted to trees when adding an element to a
-     * bin with at least this many nodes. The value must be greater
-     * than 2 and should be at least 8 to mesh with assumptions in
-     * tree removal about conversion back to plain bins upon
-     * shrinkage.
      */
     static final int TREEIFY_THRESHOLD = 8;
 
@@ -271,10 +125,6 @@ public class HashMap<K,V> extends AbstractMap<K,V>
 
     /**
      * 当整个hashMap中元素数量大于64时，也会进行转为红黑树结构。
-     * The smallest table capacity for which bins may be treeified.
-     * (Otherwise the table is resized if too many nodes in a bin.)
-     * Should be at least 4 * TREEIFY_THRESHOLD to avoid conflicts
-     * between resizing and treeification thresholds.
      */
     static final int MIN_TREEIFY_CAPACITY = 64;
 
@@ -572,19 +422,16 @@ public class HashMap<K,V> extends AbstractMap<K,V>
 
     /**
      * 获取元素
-     * Returns the value to which the specified key is mapped,
-     * or {@code null} if this map contains no mapping for the key.
+     * 返回指定键映射到的值，或者{@code null}，如果此映射不包含键的映射。
      *
-     * <p>More formally, if this map contains a mapping from a key
-     * {@code k} to a value {@code v} such that {@code (key==null ? k==null :
-     * key.equals(k))}, then this method returns {@code v}; otherwise
-     * it returns {@code null}.  (There can be at most one such mapping.)
+     * <p>更正式地说，如果这个映射包含一个键的映射
+     * {@code k}到值{@code v}这样{@code（key==null？k==空：equals（k））}，则此方法返回{@codev}；否则
+     * 它返回{@code null}(最多可以有一个这样的映射。）
      *
-     * <p>A return value of {@code null} does not <i>necessarily</i>
-     * indicate that the map contains no mapping for the key; it's also
-     * possible that the map explicitly maps the key to {@code null}.
-     * The {@link #containsKey containsKey} operation may be used to
-     * distinguish these two cases.
+     * <p>{@code null}的返回值不一定<i>不一定</i>
+     *表示该映射不包含键的映射；这也是
+     *映射可能显式地将密钥映射到{@code null}。
+     *{@link\containsKey containsKey}操作可用于分这两个案例。
      *
      * @see #put(Object, Object)
      */
@@ -604,21 +451,25 @@ public class HashMap<K,V> extends AbstractMap<K,V>
     final Node<K,V> getNode(int hash, Object key) {
         //first 头结点，e 临时变量，n 长度,k key
         Node<K,V>[] tab; Node<K,V> first, e; int n; K k;
+
         //头结点也就是数组下标的节点
-        if ((tab = table) != null && (n = tab.length) > 0 &&
-            (first = tab[(n - 1) & hash]) != null) {
-            //如果是头结点，则直接返回头结点
+        if ((tab = table) != null && (n = tab.length) > 0
+                && (first = tab[(n - 1) & hash]) != null) {
+
+            //1.如果是头结点，则直接返回头结点
             if (first.hash == hash && // always check first node
                 ((k = first.key) == key || (key != null && key.equals(k))))
                 return first;
+
             //不是头结点
             if ((e = first.next) != null) {
-                //判断是否是红黑树结构
+                //2.判断是否是红黑树结构
                 if (first instanceof TreeNode)
                     //去红黑树中找，然后返回
                     return ((TreeNode<K,V>)first).getTreeNode(hash, key);
+
+                //3.链表节点，一样遍历链表，找到该节点并返回
                 do {
-                    //链表节点，一样遍历链表，找到该节点并返回
                     if (e.hash == hash &&
                         ((k = e.key) == key || (key != null && key.equals(k))))
                         return e;
@@ -685,6 +536,7 @@ public class HashMap<K,V> extends AbstractMap<K,V>
          * 如果计算出的该哈希桶的位置没有值，则把新插入的key-value放到此处，
          * 此处就算没有插入成功，也就是发生哈希冲突时也会把哈希桶的首节点赋予p
          */
+        //1.根据key计算hash值，判断该哈希桶位置是否有值,有值则直接替换
         if ((p = tab[i = (n - 1) & hash]) == null)
             tab[i] = newNode(hash, key, value, null);
 
@@ -1064,7 +916,7 @@ public class HashMap<K,V> extends AbstractMap<K,V>
      * operations.  It does not support the <tt>add</tt> or <tt>addAll</tt>
      * operations.
      *
-     * @return a set view of the keys contained in this map
+     * @return 返回map中的所有key
      */
     public Set<K> keySet() {
         Set<K> ks = keySet;

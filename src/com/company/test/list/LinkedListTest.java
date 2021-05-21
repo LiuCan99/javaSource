@@ -36,6 +36,21 @@ public class LinkedListTest {
         LinkedList<Integer> list2=new LinkedList<>(arrlist);
     }
 
+    /**
+     * get:获得指定索引的元素
+     * 1.比较指定索引更靠近链表（LinkedList）的头节点还是尾节点
+     * 2.然后从头/尾进行遍历获得指定索引上的节点信息
+     * 3.获得节点上的值
+     */
+    @Test
+    public void get(){
+        LinkedList<String> linkedList=new LinkedList<>();
+        linkedList.add("aa");
+        linkedList.add("bb");
+
+        String s = linkedList.get(1);
+    }
+
 
     /**
      * add/offer:添加元素
@@ -53,20 +68,7 @@ public class LinkedListTest {
         linkedList.add(1,8);
     }
 
-    /**
-     * get:获得指定索引的元素
-     * 1.比较指定索引更靠近链表（LinkedList）的头节点还是尾节点
-     * 2.然后从头/尾进行遍历获得指定索引上的节点信息
-     * 3.获得节点上的值
-     */
-    @Test
-    public void get(){
-        LinkedList<String> linkedList=new LinkedList<>();
-        linkedList.add("aa");
-        linkedList.add("bb");
 
-        String s = linkedList.get(1);
-    }
     /**
      * remove：删除指定索引元素
      * 1.遍历获得该索引位置的节点元素

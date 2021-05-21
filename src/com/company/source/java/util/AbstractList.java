@@ -116,47 +116,15 @@ public abstract class AbstractList<E> extends AbstractCollection<E> implements L
      */
     abstract public E get(int index);
 
-    /**
-     * {@inheritDoc}
-     *
-     * <p>This implementation always throws an
-     * {@code UnsupportedOperationException}.
-     *
-     * @throws UnsupportedOperationException {@inheritDoc}
-     * @throws ClassCastException            {@inheritDoc}
-     * @throws NullPointerException          {@inheritDoc}
-     * @throws IllegalArgumentException      {@inheritDoc}
-     * @throws IndexOutOfBoundsException     {@inheritDoc}
-     */
+
     public E set(int index, E element) {
         throw new UnsupportedOperationException();
     }
 
-    /**
-     * {@inheritDoc}
-     *
-     * <p>This implementation always throws an
-     * {@code UnsupportedOperationException}.
-     *
-     * @throws UnsupportedOperationException {@inheritDoc}
-     * @throws ClassCastException            {@inheritDoc}
-     * @throws NullPointerException          {@inheritDoc}
-     * @throws IllegalArgumentException      {@inheritDoc}
-     * @throws IndexOutOfBoundsException     {@inheritDoc}
-     */
     public void add(int index, E element) {
         throw new UnsupportedOperationException();
     }
 
-    /**
-     * {@inheritDoc}
-     *
-     * <p>This implementation always throws an
-     * {@code UnsupportedOperationException}.
-     *
-     * @throws UnsupportedOperationException {@inheritDoc}
-     * @throws IndexOutOfBoundsException     {@inheritDoc}
-     */
     public E remove(int index) {
         throw new UnsupportedOperationException();
     }

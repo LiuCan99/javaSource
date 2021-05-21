@@ -1,4 +1,6 @@
-package com.company.test.list;
+package com.company.test;
+
+import java.util.Objects;
 
 public class User {
 
@@ -46,5 +48,18 @@ public class User {
                 ", name='" + name + '\'' +
                 ", sex='" + sex + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        User user = (User) o;
+        return Objects.equals(age, user.age) && Objects.equals(name, user.name) && Objects.equals(sex, user.sex);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(age, name, sex);
     }
 }

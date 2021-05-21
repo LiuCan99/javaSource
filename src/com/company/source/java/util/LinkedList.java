@@ -146,18 +146,22 @@ public class LinkedList<E>
      * 链接e作为最后一个元素。
      */
     void linkLast(E e) {
-        //因为我们需要把该元素设置为尾节点，所以需要新建一个变量把尾节点存储起来。
+        //记录原来的尾节点
         final Node<E> l = last;
-        //然后新建一个节点，把last指向l，然后自身设置为尾结点。
+
+        //创建一个新的尾节点
         // (指向当前节点的前一个节点的指针,节点的值,当前节点的后一个节点的指针)
         final Node<E> newNode = new Node<>(l, e, null);
+
+        //尾节点=新创建得尾节点
         last = newNode;
-        //再判断一下l是否为空，如果为空的话，说明原来的LinkedList为空。
+
+        //如果原来的尾节点为空的话，说明原来的LinkedList为空。
         if (l == null)
             //所以同时也需要把新节点设置为头节点
             first = newNode;
         else
-            //否则就把l的next设置为newNode
+            //否则就把原尾节点的next设置为newNode
             l.next = newNode;
         //size和modCount自增。
         size++;

@@ -93,14 +93,15 @@ public class HashSet<E>
 {
     static final long serialVersionUID = -5024744406713321676L;
 
+    // 使用 HashMap 的 key 保存 HashSet 中所有元素
     private transient HashMap<E,Object> map;
 
-    // Dummy value to associate with an Object in the backing Map
+    // 定义一个虚拟的 Object 对象作为 HashMap 的 value
     private static final Object PRESENT = new Object();
 
     /**
-     * Constructs a new, empty set; the backing <tt>HashMap</tt> instance has
-     * default initial capacity (16) and load factor (0.75).
+     * 构造方法，初始化 HashSet，底层会初始化一个 HashMap
+     *默认初始容量（16）和负载系数（0.75）。
      */
     public HashSet() {
         map = new HashMap<>();
@@ -121,11 +122,12 @@ public class HashSet<E>
     }
 
     /**
-     * Constructs a new, empty set; the backing <tt>HashMap</tt> instance has
-     * the specified initial capacity and the specified load factor.
      *
-     * @param      initialCapacity   the initial capacity of the hash map
-     * @param      loadFactor        the load factor of the hash map
+     * 以指定的 initialCapacity、loadFactor 创建 HashSet
+     * 其实就是以相应的参数创建 HashMap
+     *
+     * @param      initialCapacity   初始容量
+     * @param      loadFactor        负载因子
      * @throws     IllegalArgumentException if the initial capacity is less
      *             than zero, or if the load factor is nonpositive
      */
@@ -217,6 +219,7 @@ public class HashSet<E>
      * element
      */
     public boolean add(E e) {
+        System.out.println(PRESENT);
         return map.put(e, PRESENT)==null;
     }
 

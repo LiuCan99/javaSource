@@ -3797,6 +3797,12 @@ public class Arrays {
     @SafeVarargs
     @SuppressWarnings("varargs")
     public static <T> List<T> asList(T... a) {
+        /*
+        Arrays.asList是通过Arrays的一个内部类ArrayList实现的，
+        所以这里得到的ArrayList 并不是 java.util.ArrayList ，
+        而是 java.util.Arrays 的一个内部类，这个内部类用一个 final 数组来保存元素。
+         */
+        System.out.println(new ArrayList<>(a));
         return new ArrayList<>(a);
     }
 
@@ -3809,6 +3815,7 @@ public class Arrays {
         private static final long serialVersionUID = -2764017481108945198L;
         private final E[] a;
 
+        //java.util.Arrays 的一个内部类，这个内部类用一个 final 数组来保存元素。
         ArrayList(E[] array) {
             a = Objects.requireNonNull(array);
         }
